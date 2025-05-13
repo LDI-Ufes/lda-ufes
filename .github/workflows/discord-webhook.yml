@@ -1,0 +1,48 @@
+name: Discord Notification
+on: [push]
+
+jobs:
+  discord-notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord Notification
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: |
+            ‎ 
+            ### {{ 
+              EVENT_PAYLOAD.head_commit.message.match(/^(feat|fix|docs|style|refactor|test|chore|ci|perf|build|revert)(\(.+\))?:/) ? 
+              (
+                EVENT_PAYLOAD.head_commit.message.includes('feat') ? '✨ Nova Funcionalidade' :
+                EVENT_PAYLOAD.head_commit.message.includes('fix') ? '🐛 Correção de Bug' :
+                EVENT_PAYLOAD.head_commit.message.includes('docs') ? '📚 Documentação' :
+                EVENT_PAYLOAD.head_commit.message.includes('style') ? '🎨 Ajustes de Estilo' :
+                EVENT_PAYLOAD.head_commit.message.includes('refactor') ? '🔧 Refatoração' :
+                EVENT_PAYLOAD.head_commit.message.includes('test') ? '🧪 Testes' :
+                EVENT_PAYLOAD.head_commit.message.includes('chore') ? '🔨 Manutenção' :
+                EVENT_PAYLOAD.head_commit.message.includes('ci') ? '🤖 Integração Contínua' :
+                EVENT_PAYLOAD.head_commit.message.includes('perf') ? '⚡ Performance' :
+                EVENT_PAYLOAD.head_commit.message.includes('build') ? '🏗️ Build' :
+                EVENT_PAYLOAD.head_commit.message.includes('revert') ? '↩️ Reversão' :
+                '🔄 Outras Mudanças'
+              ) : 
+              '🔄 Outras Mudanças' 
+            }}
+            ### [{{ EVENT_PAYLOAD.head_commit.message.split('\n\n')[0].toUpperCase() }}](https://github.com/{{ EVENT_PAYLOAD.repository.full_name }}/commit/{{ EVENT_PAYLOAD.head_commit.id }})
+            {{ EVENT_PAYLOAD.head_commit.message.split('\n\n')[1] || 'Sem descrição adicional' }}
+
+            ### Detalhes:
+            - Repositório: {{ EVENT_PAYLOAD.repository.full_name }}
+            - Autor: {{ EVENT_PAYLOAD.sender.login }}
+            - Branch: {{ EVENT_PAYLOAD.ref.replace('refs/heads/', '') }}
+
+             `🚀 Changelog — {{ 
+            new Date(EVENT_PAYLOAD.head_commit.timestamp).toLocaleString('pt-BR', {
+              timeZone: 'America/Sao_Paulo',
+              day: '2-digit',
+              month: 'long',
+              year: 'numeric',
+            }) }}`
+            ‎
