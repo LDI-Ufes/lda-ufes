@@ -1,7 +1,8 @@
-import { Cabecalho } from "../app/components/layout/Cabecalho";
-import { Conteudo } from "../app/components/layout/Conteudo";
-import { Rodape } from "../app/components/layout/Rodape";
-import { TituloNavegacao } from "../app/components/settings/TituloNavegacao";
+import { Button } from "@/components/ui/button";
+import { Cabecalho } from "@/components/layout/Cabecalho";
+import { Conteudo } from "@/components/layout/Conteudo";
+import { Rodape } from "@/components/layout/Rodape";
+import { TituloNavegacao } from "@/components/settings/TituloNavegacao";
 
 const Inicio = () => {
   return (
@@ -20,6 +21,7 @@ const Inicio = () => {
             de leitura acessível para tornar o conteúdo mais acessível para
             todos os usuários.
           </p>
+          <Button>Clique aqui</Button>
         </div>
       </Conteudo>
       <Rodape />
