@@ -25,17 +25,17 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const storedValue = localStorage.getItem("@LDA:hasSeenOnboarding");
-    if (storedValue) {
-      setHasSeenOnboarding(JSON.parse(storedValue));
+    const storedOnboarding = localStorage.getItem("hasOnboarding");
+
+    if (storedOnboarding === "completed") {
+      setHasSeenOnboarding(true);
+      setIsOpen(false);
+    }
+
+    if (!storedOnboarding) {
+      setIsOpen(true);
     }
   }, []);
-
-  useEffect(() => {
-    if (hasSeenOnboarding) {
-      localStorage.setItem("@LDA:hasSeenOnboarding", JSON.stringify(true));
-    }
-  }, [hasSeenOnboarding]);
 
   return (
     <OnboardingContext.Provider

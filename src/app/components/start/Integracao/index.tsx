@@ -6,31 +6,34 @@ import {
   DialogHeader,
   DialogTitle,
 } from "../../ui/dialog";
-import { Button } from "../../ui/button";
+import {
+  WelcomeStep,
+  ReadingThemesStep,
+  TextSettingsStep,
+  FocusModeStep,
+  ReadyStep,
+} from "./OnboardingSteps";
 
 const steps = [
   {
     title: "Boas-vindas",
-    content:
-      "Bem-vindo ao LDA! Aqui você encontrará uma experiência única de leitura.",
+    component: WelcomeStep,
   },
   {
     title: "Temas de leitura",
-    content:
-      "Escolha entre diferentes temas para personalizar sua experiência de leitura.",
+    component: ReadingThemesStep,
   },
   {
     title: "Ajustes de texto",
-    content:
-      "Ajuste o tamanho, fonte e espaçamento do texto para sua melhor leitura.",
+    component: TextSettingsStep,
   },
   {
     title: "Sem distração",
-    content: "Modo foco para uma leitura sem distrações.",
+    component: FocusModeStep,
   },
   {
     title: "Tudo certo",
-    content: "Agora você está pronto para começar sua jornada de leitura!",
+    component: ReadyStep,
   },
 ];
 
@@ -53,6 +56,7 @@ export function Onboarding() {
   const handleSkip = () => {
     setHasSeenOnboarding(true);
     setIsOpen(false);
+    localStorage.setItem("hasOnboarding", "completed");
   };
 
   const handleNext = () => {
@@ -61,8 +65,12 @@ export function Onboarding() {
     } else {
       setHasSeenOnboarding(true);
       setIsOpen(false);
+      localStorage.setItem("hasOnboarding", "completed");
     }
   };
+
+  const CurrentStepComponent = steps[currentStep].component;
+  const isLastStep = currentStep === steps.length - 1;
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -70,19 +78,11 @@ export function Onboarding() {
         <DialogHeader>
           <DialogTitle>{steps[currentStep].title}</DialogTitle>
         </DialogHeader>
-        <div className="py-4">
-          <p>{steps[currentStep].content}</p>
-        </div>
-        <div className="flex justify-between">
-          {currentStep < steps.length - 1 && (
-            <Button variant="outline" onClick={handleSkip}>
-              Pular
-            </Button>
-          )}
-          <Button onClick={handleNext}>
-            {currentStep === steps.length - 1 ? "Começar" : "Próximo"}
-          </Button>
-        </div>
+        <CurrentStepComponent
+          onSkip={handleSkip}
+          onNext={handleNext}
+          isLastStep={isLastStep}
+        />
       </DialogContent>
     </Dialog>
   );
