@@ -30,7 +30,8 @@
       "@/components/*": ["src/app/components/*"],
       "@/types/*": ["src/app/types/*"],
       "@/contexts/*": ["src/app/contexts/*"],
-      "@/utils/*": ["src/app/utils/*"]
+      "@/utils/*": ["src/app/utils/*"],
+      "@/content/*": ["src/content/*"]
     }
   },
   "include": ["src"]

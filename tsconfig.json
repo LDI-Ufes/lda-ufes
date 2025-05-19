@@ -7,9 +7,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/app/*"],
-      "@/hooks/*": ["src/app/hooks/*"],
+      "@/*": ["src/*"],
+      "@/app/*": ["src/app/*"],
+      "@/content/*": ["src/content/*"],
       "@/components/*": ["src/app/components/*"],
+      "@/config/*": ["src/settings/*"],
+      "@/hooks/*": ["src/app/hooks/*"],
       "@/types/*": ["src/app/types/*"],
       "@/contexts/*": ["src/app/contexts/*"],
       "@/utils/*": ["src/app/utils/*"]
