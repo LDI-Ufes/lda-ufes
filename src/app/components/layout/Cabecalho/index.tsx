@@ -11,11 +11,12 @@ export const Cabecalho = ({ titulo, subtitulo }: CabecalhoProps) => {
     <header className="flex w-full items-center justify-between bg-white p-4 shadow-md">
       {/* Grupo 1: Título e Subtítulo */}
       <div className="flex flex-col">
+        <p className="text-sm text-gray-600">{subtitulo}</p>
+
         <div className="flex items-center gap-2">
           <AiOutlineBook className="text-2xl text-blue-600" />
           <h1 className="text-xl font-bold">{titulo}</h1>
         </div>
-        <p className="text-sm text-gray-600">{subtitulo}</p>
       </div>
 
       {/* Grupo 2: Barra de Pesquisa */}
