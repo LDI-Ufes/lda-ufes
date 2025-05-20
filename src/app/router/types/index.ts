@@ -1,10 +1,9 @@
 // Interface simplificada para o usuário configurar as rotas
-interface RouteConfig {
-  path: string;
+interface ConfigPaginacao {
   title: string;
   subtitle?: string;
   page: string; // Nome do arquivo da página sem a extensão
-  children?: RouteConfig[];
+  children?: ConfigPaginacao[];
 }
 
-export type { RouteConfig };
+export type { ConfigPaginacao };

@@ -1,9 +1,10 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { SettingsCapitulos } from "../../settings/ConfigCapitulos";
-import { Search } from "../search";
+import { Paginacao } from "../../settings/Paginacao";
+import Search from "../search/index";
+import Inicio from "@/content/Inicio";
 
-const routes = SettingsCapitulos.map((route) => ({
+const routes = Paginacao.map((route) => ({
   ...route,
   component: React.lazy(
     () => import(/* @vite-ignore */ `../../content/${route.page}`),
@@ -15,14 +16,11 @@ const Router: React.FC = () => {
     <Suspense fallback={<div>Carregando...</div>}>
       <Routes>
         <Route path="/pesquisa" element={<Search />} />
-        {routes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={<route.component />}
-            index={route.path === "/"}
-          />
-        ))}
+        <Route path="/" element={<Inicio />} />
+        {routes.map((route) => {
+          const path = route.page.toLowerCase();
+          return <Route key={path} path={path} element={<route.component />} />;
+        })}
       </Routes>
     </Suspense>
   );
