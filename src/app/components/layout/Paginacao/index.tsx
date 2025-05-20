@@ -1,25 +1,27 @@
 import { Link, useLocation } from "react-router-dom";
-import { SettingsCapitulos } from "@/settings/ConfigCapitulos";
+import { Paginacao } from "@/settings/Paginacao";
 
 export const Navegacao = () => {
   const location = useLocation();
 
-  const currentIndex = SettingsCapitulos.findIndex(
-    (capitulo) => capitulo.path === location.pathname,
+  const currentIndex = Paginacao.findIndex(
+    (capitulo) =>
+      capitulo.page.toLowerCase() === location.pathname.slice(1).toLowerCase(),
   );
 
-  const prevCapitulo =
-    currentIndex > 0 ? SettingsCapitulos[currentIndex - 1] : null;
+  console.log(currentIndex);
+
+  const prevCapitulo = currentIndex > 0 ? Paginacao[currentIndex - 1] : null;
   const nextCapitulo =
-    currentIndex < SettingsCapitulos.length - 1
-      ? SettingsCapitulos[currentIndex + 1]
-      : null;
+    currentIndex < Paginacao.length - 1 ? Paginacao[currentIndex + 1] : null;
+
+  console.log(prevCapitulo, nextCapitulo);
 
   return (
     <div className="mx-auto mt-8 flex w-full max-w-2xl flex-col space-y-2">
       {prevCapitulo && (
         <Link
-          to={prevCapitulo.path}
+          to={`/${prevCapitulo.page.toLowerCase()}`}
           className="flex items-center rounded bg-gray-100 p-2 text-sm text-gray-700 hover:bg-gray-200"
         >
           <span className="mr-2">←</span>
@@ -28,7 +30,7 @@ export const Navegacao = () => {
       )}
       {nextCapitulo && (
         <Link
-          to={nextCapitulo.path}
+          to={`/${nextCapitulo.page.toLowerCase()}`}
           className="flex items-center rounded bg-gray-100 p-2 text-sm text-gray-700 hover:bg-gray-200"
         >
           {nextCapitulo.title}
