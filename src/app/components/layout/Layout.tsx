@@ -3,20 +3,29 @@ import { Cabecalho } from "./Cabecalho";
 import { Rodape } from "./Rodape";
 import { Conteudo } from "./Conteudo";
 import { TituloNavegacao } from "../settings/TituloNavegacao";
-import { Navegacao } from "./Paginacao";
+import { Sumario } from "./Sumario";
+
 interface LayoutProps {
   children: ReactNode;
   titulo: string;
   subtitulo: string;
+  sumario?: boolean;
 }
 
-export const Layout = ({ children, titulo, subtitulo }: LayoutProps) => {
+export const Layout = ({
+  children,
+  titulo,
+  subtitulo,
+  sumario = true,
+}: LayoutProps) => {
   return (
     <>
       <Cabecalho titulo={titulo} subtitulo={subtitulo} />
       <TituloNavegacao titulo={titulo}>
-        <Conteudo>{children}</Conteudo>
-        <Navegacao />
+        <main className="mx-auto flex max-w-3xl gap-8">
+          <Conteudo>{children}</Conteudo>
+          {sumario && <Sumario />}
+        </main>
       </TituloNavegacao>
       <Rodape />
     </>
