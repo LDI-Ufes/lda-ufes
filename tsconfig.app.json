@@ -31,7 +31,7 @@
       "@/types/*": ["src/app/types/*"],
       "@/contexts/*": ["src/app/contexts/*"],
       "@/utils/*": ["src/app/utils/*"],
-      "@/content/*": ["src/content/*"]
+      "@/content/*": ["src/pages/*"]
     }
   },
   "include": ["src"]

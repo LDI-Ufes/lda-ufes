@@ -9,7 +9,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@/app/*": ["src/app/*"],
-      "@/content/*": ["src/content/*"],
+      "@/content/*": ["src/pages/*"],
       "@/components/*": ["src/app/components/*"],
       "@/config/*": ["src/settings/*"],
       "@/hooks/*": ["src/app/hooks/*"],
