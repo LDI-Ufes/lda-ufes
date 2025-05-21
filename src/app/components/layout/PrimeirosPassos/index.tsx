@@ -6,34 +6,28 @@ import {
   DialogHeader,
   DialogTitle,
 } from "../../ui/dialog";
-import {
-  WelcomeStep,
-  ReadingThemesStep,
-  TextSettingsStep,
-  FocusModeStep,
-  ReadyStep,
-} from "./OnboardingSteps";
+import { Passo1, Passo2, Passo3, Passo4 } from "./Passos";
 
 const steps = [
   {
     title: "Boas-vindas",
-    component: WelcomeStep,
+    component: Passo1,
   },
   {
     title: "Temas de leitura",
-    component: ReadingThemesStep,
+    component: Passo2,
   },
   {
     title: "Ajustes de texto",
-    component: TextSettingsStep,
+    component: Passo3,
   },
   {
     title: "Sem distração",
-    component: FocusModeStep,
+    component: Passo4,
   },
   {
     title: "Tudo certo",
-    component: ReadyStep,
+    component: Passo4,
   },
 ];
 

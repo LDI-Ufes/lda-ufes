@@ -1,23 +1,23 @@
 import type { ReactNode } from "react";
-import { Cabecalho } from "./Cabecalho";
-import { Rodape } from "./Rodape";
-import { Conteudo } from "./Conteudo";
-import { TituloNavegacao } from "../settings/TituloNavegacao";
-import { Sumario } from "./Sumario";
+import { Cabecalho } from "../../theme/Cabecalho";
+import { Rodape } from "../../theme/Rodape";
+import { Conteudo } from "../../theme/Conteudo";
+import { TituloNavegacao } from "../../theme/TituloNav";
+import { Sumario } from "../Sumario";
 
-interface LayoutProps {
+interface PaginaProps {
   children: ReactNode;
   titulo: string;
   subtitulo: string;
   sumario?: boolean;
 }
 
-export const Layout = ({
+export const Pagina = ({
   children,
   titulo,
   subtitulo,
   sumario = true,
-}: LayoutProps) => {
+}: PaginaProps) => {
   return (
     <>
       <Cabecalho titulo={titulo} subtitulo={subtitulo} />
