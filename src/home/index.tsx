@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Layout } from "@/components/layout/Layout";
+import { Pagina } from "@/app/components/layout/Pagina";
 
-const Inicio = () => {
+export const Inicio = () => {
   return (
-    <Layout
+    <Pagina
       titulo="LDA - Modelo de Livro Acessível Digital"
       subtitulo="Bem-vindo ao modelo de livro acessível digital."
     >
@@ -18,8 +18,6 @@ const Inicio = () => {
         </p>
         <Button>Clique aqui</Button>
       </div>
-    </Layout>
+    </Pagina>
   );
 };
-
-export default Inicio;

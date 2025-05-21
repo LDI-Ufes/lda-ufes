@@ -13,11 +13,11 @@ const searchContent = async (searchTerm: string): Promise<SearchResult[]> => {
 
   // Importar dinamicamente todos os componentes de conteúdo
   const contentModules = import.meta.glob(
-    ["../../content/*.tsx", "!../../content/Inicio.tsx"],
+    ["../../pages/*.tsx", "!../../pages/Inicio.tsx"],
     {
       eager: true,
       import: "default",
-      as: "raw",
+      query: "raw",
     },
   );
 
