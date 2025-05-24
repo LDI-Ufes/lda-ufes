@@ -3,10 +3,7 @@ import { Page } from "@/app/components/layout/Page";
 
 export const Home = () => {
   return (
-    <Page
-      title="LDA - Modelo de Livro Acessível Digital"
-      subtitle="Bem-vindo ao modelo de livro acessível digital."
-    >
+    <Page title="LDA - Modelo de Livro Acessível Digital">
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold">
           Bem-vindo ao modelo de livro acessível digital.
