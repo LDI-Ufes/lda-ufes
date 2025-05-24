@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { Cabecalho } from "../../theme/Cabecalho";
 import { Rodape } from "../../theme/Rodape";
 import { Conteudo } from "../../theme/Conteudo";
-import { TituloNavegacao } from "../../theme/TituloNav";
 import { Sumario } from "../Sumario";
 
 interface PaginaProps {
@@ -21,12 +20,10 @@ export const Pagina = ({
   return (
     <>
       <Cabecalho titulo={titulo} subtitulo={subtitulo} />
-      <TituloNavegacao titulo={titulo}>
-        <main className="mx-auto flex max-w-3xl gap-8">
-          <Conteudo>{children}</Conteudo>
-          {sumario && <Sumario />}
-        </main>
-      </TituloNavegacao>
+      <main className="mx-auto flex max-w-3xl gap-8">
+        <Conteudo>{children}</Conteudo>
+        {sumario && <Sumario />}
+      </main>
       <Rodape />
     </>
   );

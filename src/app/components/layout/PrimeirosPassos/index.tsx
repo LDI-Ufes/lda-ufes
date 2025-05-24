@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useOnboarding } from "../../../contexts/OnboardingContext";
+import { useOnboarding } from "@/app/hooks";
 import {
   Dialog,
   DialogContent,

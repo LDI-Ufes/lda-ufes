@@ -9,12 +9,12 @@
     "paths": {
       "@/*": ["src/*"],
       "@/app/*": ["src/app/*"],
-      "@/content/*": ["src/pages/*"],
+      "@/pages/*": ["src/pages/*"],
       "@/components/*": ["src/app/components/*"],
       "@/config/*": ["src/settings/*"],
       "@/hooks/*": ["src/app/hooks/*"],
       "@/types/*": ["src/app/types/*"],
-      "@/contexts/*": ["src/app/contexts/*"],
+      "@/contexts/*": ["src/app/providers/*"],
       "@/utils/*": ["src/app/utils/*"]
     }
   }

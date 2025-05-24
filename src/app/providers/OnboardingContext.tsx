@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useEffect, useState, type ReactNode } from "react";
 
 interface OnboardingContextData {
   hasSeenOnboarding: boolean;
@@ -19,7 +13,7 @@ const OnboardingContext = createContext<OnboardingContextData>(
   {} as OnboardingContextData,
 );
 
-export function OnboardingProvider({ children }: { children: ReactNode }) {
+function OnboardingProvider({ children }: { children: ReactNode }) {
   const [hasSeenOnboarding, setHasSeenOnboarding] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -53,12 +47,4 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export function useOnboarding() {
-  const context = useContext(OnboardingContext);
-
-  if (!context) {
-    throw new Error("Houve um erro ao carregar o contexto de onboarding");
-  }
-
-  return context;
-}
+export { OnboardingContext, OnboardingProvider };

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Paginacao } from "@/settings/Paginacao";
+import { Paginacao } from "@/app/router/pagination";
 
 export const Navegacao = () => {
   const location = useLocation();

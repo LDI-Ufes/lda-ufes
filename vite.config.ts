@@ -5,6 +5,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import mdx from "@mdx-js/rollup";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import path from "path";
 
 export default defineConfig({
   plugins: [
@@ -20,4 +21,10 @@ export default defineConfig({
     tailwindcss(),
     tsconfigPaths(),
   ],
+  resolve: {
+    alias: {
+      "@/pages": path.resolve(__dirname, "./src/pages"),
+      "@/app": path.resolve(__dirname, "./src/app"),
+    },
+  },
 });

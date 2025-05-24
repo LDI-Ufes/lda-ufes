@@ -7,19 +7,14 @@ interface SearchResult {
   path: string | undefined;
 }
 
-// Função para buscar conteúdo em todas as páginas
 const searchContent = async (searchTerm: string): Promise<SearchResult[]> => {
   if (!searchTerm.trim()) return [];
 
-  // Importar dinamicamente todos os componentes de conteúdo
-  const contentModules = import.meta.glob(
-    ["../../pages/*.tsx", "!../../pages/Inicio.tsx"],
-    {
-      eager: true,
-      import: "default",
-      query: "raw",
-    },
-  );
+  const contentModules = import.meta.glob(["/src/pages/*.mdx"], {
+    eager: true,
+    import: "default",
+    query: "raw",
+  });
 
   const results: SearchResult[] = [];
 
@@ -30,15 +25,12 @@ const searchContent = async (searchTerm: string): Promise<SearchResult[]> => {
         continue;
       }
 
-      // Sanitizar o conteúdo
       const textContent = sanitizeContent(content);
       console.log("textContent", textContent);
 
       if (textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
-        // Extrair título do caminho do arquivo
-        const title = path.split("/").pop()?.replace(".tsx", "") || "";
+        const title = path.split("/").pop()?.replace(".mdx", "") || "";
 
-        // Criar um trecho do texto encontrado
         const excerpt = textContent;
 
         results.push({

@@ -1,5 +1,5 @@
 import React from "react";
-import { Paginacao } from "@/settings/Paginacao";
+import { Paginacao } from "@/app/router/pagination";
 import { Link } from "react-router-dom";
 
 export const Sumario: React.FC = () => {

@@ -1,6 +1,6 @@
 import { Pagina } from "@/components/layout";
 import type { ReactNode } from "react";
-import { Conteudo } from "../../theme";
+import { Conteudo } from "../../../theme";
 
 interface MarkdownProps {
   children: ReactNode;
@@ -10,7 +10,7 @@ interface MarkdownProps {
   };
 }
 
-export const Markdown = ({ children, frontmatter }: MarkdownProps) => {
+export const MDXPage = ({ children, frontmatter }: MarkdownProps) => {
   // Se o frontmatter vier como string, tenta fazer o parse
   let parsedFrontmatter = frontmatter;
 
@@ -26,6 +26,7 @@ export const Markdown = ({ children, frontmatter }: MarkdownProps) => {
     <Pagina
       titulo={parsedFrontmatter.title}
       subtitulo={parsedFrontmatter.subtitle}
+      sumario={true}
     >
       <Conteudo>{children}</Conteudo>
     </Pagina>

@@ -29,9 +29,9 @@
       "@/hooks/*": ["src/app/hooks/*"],
       "@/components/*": ["src/app/components/*"],
       "@/types/*": ["src/app/types/*"],
-      "@/contexts/*": ["src/app/contexts/*"],
+      "@/contexts/*": ["src/app/providers/*"],
       "@/utils/*": ["src/app/utils/*"],
-      "@/content/*": ["src/pages/*"]
+      "@/pages/*": ["src/pages/*"]
     }
   },
   "include": ["src"]
