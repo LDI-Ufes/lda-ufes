@@ -17,7 +17,7 @@ export const MDXContent: React.FC<LazyMDXPageProps> = ({ pageName }) => {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    let isMounted = true; // Prevenir atualizações de estado em componente desmontado
+    let isMounted = true;
     const loadMdx = async () => {
       try {
         const path = `/src/pages/${pageName}.mdx`;

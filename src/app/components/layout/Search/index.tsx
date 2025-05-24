@@ -1,5 +1,6 @@
-import { SearchContainer } from "./SearchContainer";
 import { Page } from "@/app/components/layout";
+import { SearchInput } from "./SearchInput";
+import { SearchResults } from "./SearchResults";
 
 const Search = () => {
   return (
@@ -8,7 +9,8 @@ const Search = () => {
       subtitle="Pesquise em todo o conteúdo do livro"
       hasSummary={false}
     >
-      <SearchContainer />
+      <SearchInput />
+      <SearchResults />
     </Page>
   );
 };

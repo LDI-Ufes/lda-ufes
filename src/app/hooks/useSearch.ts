@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { sanitizeContent, UGetPageByPagination } from "@/app/utils";
+import { UGetPageByPagination, USanitizeContentMDX } from "@/app/utils";
+import striptags from "striptags";
 
-interface SearchResult {
+export interface SearchResult {
   title: string | undefined;
   excerpt: string;
   path: string | undefined;
@@ -25,17 +26,22 @@ const searchContent = async (searchTerm: string): Promise<SearchResult[]> => {
         continue;
       }
 
-      const textContent = sanitizeContent(content);
-      console.log("textContent", textContent);
+      const textContent = striptags(content);
+      const textContentMDX = USanitizeContentMDX(textContent);
 
-      if (textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
+      if (textContentMDX.toLowerCase().includes(searchTerm.toLowerCase())) {
         const title = path.split("/").pop()?.replace(".mdx", "") || "";
 
-        const excerpt = textContent;
+        const searchTermIndex = textContentMDX
+          .toLowerCase()
+          .indexOf(searchTerm.toLowerCase());
+        const startIndex = Math.max(0, searchTermIndex);
+        const excerpt = textContentMDX.substring(startIndex, startIndex + 200);
+        const excerptWithEllipsis = `${startIndex > 0 ? "(...) " : ""}${excerpt}...`;
 
         results.push({
           title: UGetPageByPagination(title)?.title,
-          excerpt,
+          excerpt: excerptWithEllipsis,
           path: UGetPageByPagination(title)?.path,
         });
       }

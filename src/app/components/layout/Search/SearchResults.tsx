@@ -1,28 +1,14 @@
-import { useState } from "react";
-import { useSearch } from "@/hooks/useSearch";
-import { Link } from "react-router-dom";
+import { useSearch } from "@/app/hooks";
+import { Link, useSearchParams } from "react-router-dom";
 
-export const SearchContainer = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const { results, isLoading } = useSearch(searchTerm);
+export const SearchResults = () => {
+  const [searchParams] = useSearchParams();
+  const queryParamTerm = searchParams.get("q") || "";
+
+  const { results, isLoading } = useSearch(queryParamTerm);
 
   return (
     <div className="mx-auto w-full max-w-2xl p-4">
-      <div className="relative">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Digite para pesquisar..."
-          className="w-full rounded-lg border border-gray-300 p-4 focus:border-transparent focus:ring-2 focus:ring-blue-500"
-        />
-        {isLoading && (
-          <div className="absolute top-1/2 right-4 -translate-y-1/2 transform">
-            <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-blue-500"></div>
-          </div>
-        )}
-      </div>
-
       <div className="mt-4">
         {results.length > 0 ? (
           <div className="space-y-4">
@@ -34,9 +20,10 @@ export const SearchContainer = () => {
                 <h3 className="text-lg font-semibold">{result.title}</h3>
                 <p className="mt-2 text-gray-600">
                   {result.excerpt
-                    .split(new RegExp(`(${searchTerm})`, "gi"))
+                    .split(new RegExp(`(${queryParamTerm})`, "gi"))
                     .map((part, i) =>
-                      part.toLowerCase() === searchTerm.toLowerCase() ? (
+                      queryParamTerm &&
+                      part.toLowerCase() === queryParamTerm.toLowerCase() ? (
                         <mark key={i} className="bg-yellow-200">
                           {part}
                         </mark>
@@ -56,9 +43,9 @@ export const SearchContainer = () => {
               </div>
             ))}
           </div>
-        ) : searchTerm && !isLoading ? (
+        ) : queryParamTerm && !isLoading ? (
           <p className="text-center text-gray-500">
-            Nenhum resultado encontrado
+            Nenhum resultado encontrado para "{queryParamTerm}"
           </p>
         ) : null}
       </div>
