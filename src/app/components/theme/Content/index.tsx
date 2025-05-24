@@ -8,7 +8,7 @@ export const Content = ({
   cover?: string;
 }) => {
   return (
-    <div className="min-h-[80dvh] flex-1 p-4">
+    <div className="min-h-[80dvh] max-w-3xl flex-1 p-4">
       {cover && (
         <div className="relative h-48 w-full">
           <img
