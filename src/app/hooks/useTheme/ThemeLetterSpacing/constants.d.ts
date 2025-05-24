@@ -1,0 +1,7 @@
+export const LETTER_SPACING_VALUES = {
+  LETTER_SPACING_TIGHT: "tight",
+  LETTER_SPACING_NORMAL: "normal",
+  LETTER_SPACING_WIDE: "wide",
+  LETTER_SPACING_WIDER: "wider",
+  LETTER_SPACING_LOOSE: "loose",
+} as const;

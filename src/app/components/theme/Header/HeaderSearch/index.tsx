@@ -1,4 +1,4 @@
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/app/components/ui/Button";
 import { cn } from "@/app/utils";
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";

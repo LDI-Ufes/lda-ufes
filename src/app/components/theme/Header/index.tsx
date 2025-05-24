@@ -2,7 +2,7 @@ import { HeaderTitle } from "./HeaderTitle";
 import { HeaderSearch } from "./HeaderSearch";
 import { HeaderAdjustments } from "./HeaderAdjustments";
 import { HeaderLinkHome } from "./HeaderLinkHome";
-import { Container } from "../../ui/container";
+import { Container } from "@/app/components/ui/Container";
 
 interface HeaderProps {
   title: string;
@@ -18,7 +18,7 @@ export const Header = ({
   hasSearch = true,
 }: HeaderProps) => {
   return (
-    <header className="flex w-full items-center justify-between bg-white p-4">
+    <header className="bg-theme-background flex w-full items-center justify-between p-4">
       <Container className="flex items-center justify-between">
         {hasHomeLink ? (
           <HeaderLinkHome text="Página Inicial" />

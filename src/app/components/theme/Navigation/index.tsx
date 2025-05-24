@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Pagination } from "@/app/router/pagination";
+import { Pagination } from "@/app/router/routes";
 import { UGetPageByPagination } from "@/app/utils";
 
 export const Navigation = () => {

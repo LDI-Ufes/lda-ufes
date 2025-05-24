@@ -1,6 +1,6 @@
 import type { MDXComponents } from "mdx/types";
-import { MDXContext } from "@/app/providers/MDXProvider/Context";
 import { useContext } from "react";
+import { MDXContext } from "@/app/contexts/MDXProvider/Context";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
