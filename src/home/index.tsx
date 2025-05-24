@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/Button";
 import { Page } from "@/app/components/layout/Page";
 
 export const Home = () => {
