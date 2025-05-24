@@ -1,6 +1,5 @@
-import { Page } from "@/components/layout";
+import { Page } from "@/app/components/layout";
 import type { ReactNode } from "react";
-import { Content } from "../../../theme";
 import type { TFrontmatter } from "@/app/@types";
 
 interface MarkdownProps {
@@ -24,8 +23,9 @@ export const MDXPage = ({ children, frontmatter }: MarkdownProps) => {
       title={parsedFrontmatter.title}
       subtitle={parsedFrontmatter.subtitle}
       hasSummary={true}
+      cover={parsedFrontmatter.cover}
     >
-      <Content cover={parsedFrontmatter.cover}>{children}</Content>
+      {children}
     </Page>
   );
 };

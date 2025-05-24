@@ -5,7 +5,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/app/components/ui/Dialog";
 import { StepsContent } from "./StepsContent";
 
 export function Onboarding() {

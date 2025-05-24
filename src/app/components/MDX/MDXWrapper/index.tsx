@@ -1,5 +1,5 @@
-import { MDXContext } from "@/app/providers";
-import { MDXPage } from "../MDXPage";
+import { MDXContext } from "@/app/contexts";
+import { MDXPage } from "@/app/components/MDX/MDXPage";
 import { useBrowserNavTitle } from "@/app/hooks";
 import { useState, useEffect } from "react";
 import type { TFrontmatter } from "@/app/@types";

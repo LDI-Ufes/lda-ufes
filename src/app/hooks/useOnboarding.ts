@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { OnboardingContext } from "@/app/providers";
+import { OnboardingContext } from "@/app/contexts";
 
 export function useOnboarding() {
   const context = useContext(OnboardingContext);

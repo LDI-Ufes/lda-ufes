@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/Button";
 import type { OnboardingStepProps } from "../../types";
 
 export const Step1 = ({ onSkip, onNext, isLastStep }: OnboardingStepProps) => {

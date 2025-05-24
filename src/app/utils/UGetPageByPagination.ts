@@ -1,4 +1,4 @@
-import { Pagination } from "@/app/router/pagination";
+import { Pagination } from "@/app/router/routes";
 
 export const UGetPageByPagination = (title: string) => {
   let pathURL: { path: string; title: string } | undefined;

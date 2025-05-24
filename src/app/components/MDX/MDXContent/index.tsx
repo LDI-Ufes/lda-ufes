@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MDXWrapper } from "../MDXWrapper";
+import { MDXWrapper } from "@/app/components/MDX/MDXWrapper";
 import type { TFrontmatter } from "@/app/@types";
 
 interface LazyMDXPageProps {

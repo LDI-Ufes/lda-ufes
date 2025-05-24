@@ -1,8 +1,5 @@
 import type { ReactNode } from "react";
-import { Header } from "../../theme/Header";
-import { Footer } from "../../theme/Footer";
-import { Content } from "../../theme/Content";
-import { Sumario } from "../Summary";
+import { Header, Footer, Content, Sumario } from "@/app/components/Theme";
 
 interface PageProps {
   children: ReactNode;
@@ -22,8 +19,29 @@ export const Page = ({
   return (
     <>
       <Header title={title} subtitle={subtitle} />
+      {cover ? (
+        <>
+          <div className="relative h-48 w-full">
+            <img
+              src={`/src/public/covers/${cover}`}
+              alt="Capa do livro"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="bg-primary relative h-48 w-full">
+            <div className="flex h-full items-center justify-center">
+              <p className="text-2xl font-bold text-white">
+                Nenhuma capa selecionada
+              </p>
+            </div>
+          </div>
+        </>
+      )}
       <main className="mx-auto flex max-w-7xl justify-between gap-8">
-        <Content cover={cover}>{children}</Content>
+        <Content>{children}</Content>
         {hasSummary && <Sumario />}
       </main>
       <Footer />

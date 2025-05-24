@@ -1,10 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import "./index.css";
-import { OnboardingProvider } from "@/app/providers";
-import { Onboarding } from "@/app/components/onboarding";
+import "./styles/index.css";
+import { OnboardingProvider } from "@/app/contexts";
+import { Onboarding } from "@/app/components/Onboarding";
 import Router from "@/app/router";
+import { ThemeProvider } from "@/app/contexts/ThemeProvider";
 
 const root = document.getElementById("root");
 
@@ -14,11 +15,13 @@ if (!root) {
 
 createRoot(root).render(
   <StrictMode>
-    <BrowserRouter>
-      <OnboardingProvider>
-        <Onboarding />
-        <Router />
-      </OnboardingProvider>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <OnboardingProvider>
+          <Onboarding />
+          <Router />
+        </OnboardingProvider>
+      </BrowserRouter>
+    </ThemeProvider>
   </StrictMode>,
 );
