@@ -1,9 +1,10 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Pagination } from "./pagination";
-import { Search, MDXContent } from "@/components/layout";
+import { MDXContent } from "@/components/layout";
 import { Home } from "@/home";
 import { MDXProvider } from "@/app/providers";
+import { Search } from "@/components/search";
 
 const Router: React.FC = () => {
   return (

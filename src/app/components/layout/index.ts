@@ -1,5 +1,4 @@
-export * from "./Onboarding";
+export * from "../onboarding";
 export * from "./Page";
 export * from "./Summary";
-export * from "./Search";
 export * from "./MDX";

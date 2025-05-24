@@ -3,12 +3,14 @@ import { useState } from "react";
 import { useSearch } from "@/app/hooks";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { cn } from "@/app/utils";
 
 interface SearchInputProps {
   placeholder?: string;
+  className?: string;
 }
 
-export const SearchInput = ({ placeholder }: SearchInputProps) => {
+export const SearchInput = ({ placeholder, className }: SearchInputProps) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const queryParamTerm = searchParams.get("q") || "";
   const [inputValue, setInputValue] = useState(queryParamTerm);
@@ -45,7 +47,10 @@ export const SearchInput = ({ placeholder }: SearchInputProps) => {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-lg border border-gray-300 p-4 focus:border-transparent focus:ring-2 focus:ring-blue-500"
+        className={cn(
+          "w-full rounded-lg border border-gray-300 p-4 focus:border-transparent focus:ring-2 focus:ring-blue-500",
+          className,
+        )}
       />
       {isLoading && (
         <div className="absolute top-1/2 right-4 -translate-y-1/2 transform">
