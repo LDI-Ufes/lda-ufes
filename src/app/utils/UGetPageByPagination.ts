@@ -1,9 +1,9 @@
-import { Paginacao } from "@/app/router/pagination";
+import { Pagination } from "@/app/router/pagination";
 
 export const UGetPageByPagination = (title: string) => {
   let pathURL: { path: string; title: string } | undefined;
 
-  Paginacao.map((page) => {
+  Pagination.map((page) => {
     if (page.page === title) {
       pathURL = { path: page.page.toLowerCase(), title: page.title };
     }

@@ -1,24 +1,21 @@
-type PaginateProps = {
+import type { TFrontmatter } from "../@types";
+
+type PaginationProps = {
   title: string;
   subtitle?: string;
   page: string;
+  cover?: string;
 };
 
-interface Frontmatter {
-  order: number;
-  title: string;
-  subtitle?: string;
-}
-
 interface MdxModule {
-  frontmatter: Frontmatter;
+  frontmatter: TFrontmatter;
 }
 
 const mdxModules = import.meta.glob<MdxModule>(`/src/pages/*.mdx`, {
   eager: true,
 });
 
-const paginasProcessadas = Object.entries(mdxModules)
+const GetPagination = Object.entries(mdxModules)
   .map(([path, module]) => {
     if (!module || !module.frontmatter) {
       console.warn(
@@ -28,6 +25,7 @@ const paginasProcessadas = Object.entries(mdxModules)
     }
 
     const frontmatter = module.frontmatter;
+
     const fileName =
       path
         .split("/")
@@ -50,20 +48,24 @@ const paginasProcessadas = Object.entries(mdxModules)
       title: frontmatter.title,
       page: fileName,
       order: frontmatter.order,
+      cover: frontmatter.cover,
     };
   })
   .filter(
-    (page): page is { title: string; page: string; order: number } =>
+    (
+      page,
+    ): page is { title: string; page: string; order: number; cover: string } =>
       page !== null,
   )
   .sort((a, b) => a.order - b.order);
 
-export const Paginacao: PaginateProps[] = paginasProcessadas.map((p) => ({
+export const Pagination: PaginationProps[] = GetPagination.map((p) => ({
   title: p.title,
   page: p.page,
+  cover: p.cover,
 }));
 
-if (Paginacao.length === 0) {
+if (Pagination.length === 0) {
   console.warn(
     "LDA: Nenhuma página encontrada para paginação dinâmica. " +
       "Verifique se seus arquivos .mdx estão em 'src/pages', " +

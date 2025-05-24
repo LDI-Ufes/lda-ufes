@@ -1,4 +1,4 @@
 export * from "./useSearch";
-export * from "./useTituloNavegacao";
+export * from "./useBrowserNavTitle";
 export * from "./useMDXComponents";
 export * from "./useOnboarding";

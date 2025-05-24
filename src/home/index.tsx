@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Pagina } from "@/app/components/layout/Pagina";
+import { Page } from "@/app/components/layout/Page";
 
-export const Inicio = () => {
+export const Home = () => {
   return (
-    <Pagina
-      titulo="LDA - Modelo de Livro Acessível Digital"
-      subtitulo="Bem-vindo ao modelo de livro acessível digital."
+    <Page
+      title="LDA - Modelo de Livro Acessível Digital"
+      subtitle="Bem-vindo ao modelo de livro acessível digital."
     >
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold">
@@ -18,6 +18,6 @@ export const Inicio = () => {
         </p>
         <Button>Clique aqui</Button>
       </div>
-    </Pagina>
+    </Page>
   );
 };

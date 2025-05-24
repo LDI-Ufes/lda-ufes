@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import { OnboardingProvider } from "@/app/providers";
-import { Onboarding } from "@/app/components/layout/PrimeirosPassos";
+import { Onboarding } from "@/app/components/layout";
 import Router from "@/app/router";
 
 const root = document.getElementById("root");

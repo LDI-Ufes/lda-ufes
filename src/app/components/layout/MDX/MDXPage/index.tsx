@@ -1,17 +1,14 @@
-import { Pagina } from "@/components/layout";
+import { Page } from "@/components/layout";
 import type { ReactNode } from "react";
-import { Conteudo } from "../../../theme";
+import { Content } from "../../../theme";
+import type { TFrontmatter } from "@/app/@types";
 
 interface MarkdownProps {
   children: ReactNode;
-  frontmatter: {
-    title: string;
-    subtitle: string;
-  };
+  frontmatter: Omit<TFrontmatter, "order">;
 }
 
 export const MDXPage = ({ children, frontmatter }: MarkdownProps) => {
-  // Se o frontmatter vier como string, tenta fazer o parse
   let parsedFrontmatter = frontmatter;
 
   if (typeof frontmatter === "string") {
@@ -23,12 +20,12 @@ export const MDXPage = ({ children, frontmatter }: MarkdownProps) => {
   }
 
   return (
-    <Pagina
-      titulo={parsedFrontmatter.title}
-      subtitulo={parsedFrontmatter.subtitle}
-      sumario={true}
+    <Page
+      title={parsedFrontmatter.title}
+      subtitle={parsedFrontmatter.subtitle}
+      hasSummary={true}
     >
-      <Conteudo>{children}</Conteudo>
-    </Pagina>
+      <Content cover={parsedFrontmatter.cover}>{children}</Content>
+    </Page>
   );
 };

@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Paginacao } from "./pagination";
-import { Pesquisa, MDXContent } from "@/components/layout";
-import { Inicio } from "@/home";
+import { Pagination } from "./pagination";
+import { Search, MDXContent } from "@/components/layout";
+import { Home } from "@/home";
 import { MDXProvider } from "@/app/providers";
 
 const Router: React.FC = () => {
@@ -10,9 +10,9 @@ const Router: React.FC = () => {
     <MDXProvider>
       <Suspense fallback={<div>Carregando...</div>}>
         <Routes>
-          <Route path="/pesquisa" element={<Pesquisa />} />
-          <Route path="/" element={<Inicio />} />
-          {Paginacao.map((route) => {
+          <Route path="/pesquisa" element={<Search />} />
+          <Route path="/" element={<Home />} />
+          {Pagination.map((route) => {
             return (
               <Route
                 key={route.page}

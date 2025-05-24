@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MDXWrapper } from "../MDXWrapper";
+import type { TFrontmatter } from "@/app/@types";
 
 interface LazyMDXPageProps {
   pageName: string;
@@ -8,7 +9,7 @@ interface LazyMDXPageProps {
 interface MdxModule {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   default: React.ComponentType<any>;
-  frontmatter: { title: string; subtitle: string; order: number };
+  frontmatter: TFrontmatter;
 }
 
 export const MDXContent: React.FC<LazyMDXPageProps> = ({ pageName }) => {
