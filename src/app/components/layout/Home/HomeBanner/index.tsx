@@ -29,7 +29,7 @@ export const HomeBanner = ({
         <div className="from-primary to-primary/50 top-0 left-0 z-0 h-32 w-full bg-gradient-to-b object-cover sm:h-48 md:h-60 lg:absolute lg:h-full"></div>
       )}
       <Container>
-        <header className="bg-theme-background relative z-1 ml-auto flex flex-col justify-center gap-4 py-4 lg:min-h-[80dvh] lg:max-w-[576px] lg:gap-8 xl:px-20">
+        <header className="bg-theme-background relative z-1 ml-auto flex flex-col justify-center gap-4 py-4 lg:min-h-[80dvh] lg:max-w-[576px] lg:gap-8 lg:px-20 xl:mr-32">
           <div className="flex flex-col gap-1">
             <span className="text-primary text-sm uppercase">
               Livro Digital • {year}
