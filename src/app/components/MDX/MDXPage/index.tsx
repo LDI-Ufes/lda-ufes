@@ -21,7 +21,7 @@ export const MDXPage = ({ children, frontmatter }: MarkdownProps) => {
   return (
     <Page
       title={parsedFrontmatter.title}
-      subtitle={parsedFrontmatter.subtitle}
+      subtitle={parsedFrontmatter.subtitle || "Capítulo"}
       hasSummary={true}
       cover={parsedFrontmatter.cover}
     >

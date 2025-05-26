@@ -12,13 +12,13 @@ interface PageProps {
 export const Page = ({
   children,
   title,
-  subtitle = "Livro Digital",
+  subtitle = "Capítulo",
   hasSummary = true,
   cover,
 }: PageProps) => {
   return (
     <>
-      <Header title={title} subtitle={subtitle} />
+      <Header title={title} subtitle={subtitle} hasSearch={true} />
       {cover ? (
         <>
           <div className="relative mt-16 h-48 w-full lg:mt-20 lg:h-64">
