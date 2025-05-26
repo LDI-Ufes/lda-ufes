@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { Pagination } from "@/app/router/routes";
 import { UGetPageByPagination } from "@/app/utils";
+import { Button } from "../../ui/Button";
+import { MdArrowBack, MdArrowForward, MdHomeFilled } from "react-icons/md";
 
 export const Navigation = () => {
   const location = useLocation();
@@ -14,25 +16,34 @@ export const Navigation = () => {
   const nextCapitulo =
     currentIndex < Pagination.length - 1 ? Pagination[currentIndex + 1] : null;
 
+  const pageInicial = currentIndex === 0 ? "/" : null;
+
   return (
-    <div className="mx-auto mt-8 flex w-full max-w-2xl flex-col space-y-2">
+    <div className="mx-auto mt-8 flex justify-center gap-10 space-y-2">
+      {pageInicial && (
+        <Button variant="secondary" asChild>
+          <Link to="/" className="">
+            <MdHomeFilled />
+            <span className="max-md:sr-only">Página</span> inicial
+          </Link>
+        </Button>
+      )}
+
       {prevCapitulo && (
-        <Link
-          to={`/${UGetPageByPagination(prevCapitulo.page)?.path}`}
-          className="flex items-center rounded bg-gray-100 p-2 text-sm text-gray-700 hover:bg-gray-200"
-        >
-          <span className="mr-2">←</span>
-          {prevCapitulo.title}
-        </Link>
+        <Button variant="secondary" asChild>
+          <Link to={`/${UGetPageByPagination(prevCapitulo.page)?.path}`}>
+            <MdArrowBack />
+            <span className="max-md:sr-only">Capítulo</span> anterior
+          </Link>
+        </Button>
       )}
       {nextCapitulo && (
-        <Link
-          to={`/${UGetPageByPagination(nextCapitulo.page)?.path}`}
-          className="flex items-center rounded bg-gray-100 p-2 text-sm text-gray-700 hover:bg-gray-200"
-        >
-          {nextCapitulo.title}
-          <span className="ml-2">→</span>
-        </Link>
+        <Button variant="secondary" asChild>
+          <Link to={`/${UGetPageByPagination(nextCapitulo.page)?.path}`}>
+            <span className="max-md:sr-only">Próximo</span> capítulo
+            <MdArrowForward />
+          </Link>
+        </Button>
       )}
     </div>
   );
