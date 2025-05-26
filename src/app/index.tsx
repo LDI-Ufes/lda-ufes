@@ -6,7 +6,7 @@ import { OnboardingProvider } from "@/app/contexts";
 import { Onboarding } from "@/app/components/Onboarding";
 import Router from "@/app/router";
 import { ThemeProvider } from "@/app/contexts/ThemeProvider";
-
+import { Loader } from "@/app/components/layout/Loader";
 const root = document.getElementById("root");
 
 if (!root) {
@@ -17,6 +17,7 @@ createRoot(root).render(
   <StrictMode>
     <ThemeProvider>
       <BrowserRouter>
+        <Loader />
         <OnboardingProvider>
           <Onboarding />
           <Router />
