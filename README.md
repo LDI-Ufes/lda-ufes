@@ -54,6 +54,10 @@ Seu principal objetivo é oferecer uma experiência tecnológica que simplifique
 
 O MDX é uma extensão do Markdown que permite incorporar componentes React diretamente nos arquivos de conteúdo. No nosso projeto, utilizamos o MDX para criar páginas dinâmicas onde podemos misturar conteúdo em Markdown com componentes React interativos.
 
+| Tipo de Arquivo        | Descrição                                                         |
+| ---------------------- | ----------------------------------------------------------------- |
+| `{nome-da-pagina}.mdx` | Arquivos de conteúdo que combinam Markdown com componentes React. |
+
 O frontmatter (a seção entre `---` no início do arquivo) é uma característica do MDX que nos permite definir metadados para cada página, como título, ordem e template, que são utilizados para configurar a apresentação e estrutura do capítulo no livro digital.
 
 | Propriedade | Descrição                                                                                           |
