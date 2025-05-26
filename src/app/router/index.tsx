@@ -5,8 +5,11 @@ import { MDXContent } from "@/app/components/MDX";
 import { Home } from "@/home";
 import { MDXProvider } from "@/app/contexts/MDXProvider";
 import { Search } from "@/app/components/Search";
+import { useScrollToHash } from "@/app/hooks/useScrollToHash";
 
 const Router: React.FC = () => {
+  useScrollToHash();
+
   return (
     <MDXProvider>
       <Suspense fallback={<div>Carregando...</div>}>
