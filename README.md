@@ -114,6 +114,8 @@ Siga os passos abaixo para configurar e executar o projeto localmente:
     # yarn build
     ```
 
+    Após executar o comando de build, os arquivos otimizados para produção serão gerados na pasta `dist`. Para visualizar a versão de produção localmente, você pode usar um servidor estático como o `serve`:
+
 5.  **Para rodar o linter:**
     ```bash
     npm run lint
