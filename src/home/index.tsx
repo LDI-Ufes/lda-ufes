@@ -1,20 +1,85 @@
-import { Button } from "@/app/components/ui/Button";
-import { Page } from "@/app/components/layout/Page";
+import { HomeBanner } from "@/app/components/layout/Home/HomeBanner";
+import { HomePage } from "@/app/components/layout/Home/HomePage";
+import { HomeSummary } from "@/app/components/layout/Home/HomeSummary";
+import { Footer } from "@/app/components/theme";
+import Catalog from "@/app/components/theme/Catalog";
+import { Container } from "@/app/components/ui/Container";
 
-export const Home = () => {
+const Home = () => {
   return (
-    <Page title="LDA - Modelo de Livro Acessível Digital">
-      <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-bold">
-          Bem-vindo ao modelo de livro acessível digital.
-        </h1>
-        <p className="text-gray-600">
-          Este é um modelo de livro acessível digital que utiliza a tecnologia
-          de leitura acessível para tornar o conteúdo mais acessível para todos
-          os usuários.
-        </p>
-        <Button>Clique aqui</Button>
-      </div>
-    </Page>
+    <>
+      <HomePage title="Modelo de Livro Acessível Digital">
+        <HomeBanner
+          title="Modelo de Livro Acessível Digital"
+          year="2025"
+          cover=""
+          authors={[
+            { name: "Prof. Dr. Rafael de Queiroz" },
+            { name: "Prof. Dr. Josimar Ribeiro" },
+            { name: "Profa. Dra. Rosângela C. Barthus" },
+          ]}
+        />
+
+        <Container className="my-14 flex flex-col gap-14 lg:mt-28 lg:gap-28">
+          <HomeSummary />
+          <Catalog>
+            <Catalog.Header>
+              <Catalog.Paragraph>
+                Dados Internacionais de Catalogação-na-publicação (CIP)
+              </Catalog.Paragraph>
+              <Catalog.Paragraph>
+                (Biblioteca Central da Universidade Federal do Espírito Santo,
+                ES, Brasil)
+              </Catalog.Paragraph>
+            </Catalog.Header>
+
+            <Catalog.Content>
+              <Catalog.Author>Ferreira, Rafael de Queiroz.</Catalog.Author>
+              <Catalog.Code>F383q</Catalog.Code>
+              <Catalog.WorkDetails>
+                <Catalog.Paragraph>
+                  Química ambiental [recurso eletrônico] / Rafael de Queiroz
+                  Ferreira, Josimar Ribeiro, Rosângela C. Barthus. - Dados
+                  eletrônicos. - 3. ed. - Vitória : Universidade Federal do
+                  Espírito Santo, Secretaria de Ensino a Distância, 2023.
+                  <br />1 recurso online (não paginado). : il.
+                </Catalog.Paragraph>
+                <br />
+                <Catalog.Paragraph>Inclui bibliografia.</Catalog.Paragraph>
+                <Catalog.Paragraph>ISBN: 978-65-994410-7-3</Catalog.Paragraph>
+                <Catalog.Paragraph>
+                  Modo de acesso:
+                  <a
+                    href="http://acervo.sead.ufes.br/materiais/quimica-ambiental"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    http://acervo.sead.ufes.br/materiais/quimica-ambiental
+                  </a>
+                </Catalog.Paragraph>
+                <br />
+                <Catalog.Paragraph>
+                  1. Química ambiental. I. Ribeiro, Josimar. II. Barthus,
+                  Rosângela C. III. Título.
+                </Catalog.Paragraph>
+                <Catalog.Paragraph className="text-right">
+                  CDU: 54
+                </Catalog.Paragraph>
+              </Catalog.WorkDetails>
+            </Catalog.Content>
+
+            <Catalog.Footer>
+              <Catalog.Paragraph>
+                Elaborado por Adriana T. Caetano – CRB-6 ES-000827/O
+              </Catalog.Paragraph>
+            </Catalog.Footer>
+          </Catalog>
+        </Container>
+      </HomePage>
+      <Footer />
+    </>
   );
 };
+
+export { Home };

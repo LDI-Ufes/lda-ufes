@@ -1,9 +1,8 @@
 export const Footer = () => {
   return (
-    <footer className="flex justify-center bg-white p-4">
-      <p className="text-sm text-gray-600">
+    <footer className="bg-primary flex justify-center p-4">
+      <p className="text-sm text-white">
         {new Date().getFullYear()} LDA. Todos os direitos reservados.
-        Desenvolvido por LDI.
       </p>
     </footer>
   );
