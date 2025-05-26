@@ -41,6 +41,15 @@ Seu principal objetivo é oferecer uma experiência tecnológica que simplifique
 - **Husky:** Gerenciamento de git hooks para garantir a qualidade do código antes de commits/pushes (ex: rodar linters e testes).
 - **lint-staged:** Permite rodar linters/formatadores apenas nos arquivos modificados que estão prestes a serem commitados.
 
+# Inicialização do Husky (Importante para evitar commits com erros)
+
+O Husky é uma ferramenta essencial para garantir a qualidade do código através de git hooks. Para inicializar o Husky no projeto, siga os passos:
+
+2. **Inicialização do Husky:**
+   ```bash
+   npx husky init
+   ```
+
 # Estrutura de Pastas
 
 | Pasta     | Descrição                    |
