@@ -22,7 +22,7 @@ const HeaderTitle = ({
     >
       <p
         className={cn(
-          "text-theme text-xs uppercase lg:text-sm",
+          "text-theme truncate text-xs uppercase lg:text-sm",
           hasSummary && "lg:text-center",
         )}
       >

@@ -1,6 +1,6 @@
 import { Button } from "@/app/components/ui/Button";
 import { cn } from "@/app/utils";
-import { MdOutlineHome } from "react-icons/md";
+import { MdHomeFilled, MdOutlineHome } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const HeaderLinkHome = ({
@@ -21,7 +21,8 @@ const HeaderLinkHome = ({
       )}
     >
       <Link to="/" className="flex items-center gap-2">
-        <MdOutlineHome className="text-2xl" />
+        <MdOutlineHome className="text-2xl lg:hidden" />
+        <MdHomeFilled className="text-2xl max-lg:hidden" />
         <span className="hidden lg:block">{text}</span>
       </Link>
     </Button>

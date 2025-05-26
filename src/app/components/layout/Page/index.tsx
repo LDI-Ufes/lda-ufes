@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { Header, Footer, Content, Sumario } from "@/app/components/theme";
+import { Header, Footer, Content, Summary } from "@/app/components/theme";
+import { ButtonToTop } from "../../theme/ButtonToTop";
 
 interface PageProps {
   children: ReactNode;
@@ -7,6 +8,7 @@ interface PageProps {
   subtitle?: string;
   hasSummary?: boolean;
   cover?: string;
+  hasProgress?: boolean;
 }
 
 export const Page = ({
@@ -14,14 +16,20 @@ export const Page = ({
   title,
   subtitle = "Capítulo",
   hasSummary = true,
+  hasProgress = true,
   cover,
 }: PageProps) => {
   return (
     <>
-      <Header title={title} subtitle={subtitle} hasSearch={true} />
+      <Header
+        title={title}
+        subtitle={subtitle}
+        hasSearch={true}
+        hasProgress={hasProgress}
+      />
       {cover ? (
         <>
-          <div className="relative mt-16 h-48 w-full lg:mt-20 lg:h-64">
+          <div className="relative mt-16 h-48 w-full md:h-64 lg:mt-20 lg:h-96 xl:h-120">
             <img
               src={`/covers/${cover}`}
               alt="Capa do livro"
@@ -40,11 +48,12 @@ export const Page = ({
           </div>
         </>
       )}
-      <main className="relative mx-auto flex max-w-7xl justify-between gap-8 py-5 lg:py-16">
+      <main className="relative mx-auto flex max-w-7xl flex-col justify-between gap-8 py-5 lg:flex-row lg:py-16">
         <Content>{children}</Content>
-        {hasSummary && <Sumario />}
+        {hasSummary && <Summary />}
       </main>
       <Footer />
+      <ButtonToTop />
     </>
   );
 };
