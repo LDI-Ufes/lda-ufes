@@ -4,7 +4,7 @@ import type { TFrontmatter } from "@/app/@types";
 
 interface MarkdownProps {
   children: ReactNode;
-  frontmatter: Omit<TFrontmatter, "order">;
+  frontmatter: Omit<TFrontmatter, "order" | "template">;
 }
 
 export const MDXPage = ({ children, frontmatter }: MarkdownProps) => {

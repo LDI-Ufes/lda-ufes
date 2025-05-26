@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import type { TFrontmatter } from "@/app/@types";
 interface MDXWrapperProps {
   children: React.ReactNode;
-  frontmatter?: TFrontmatter;
+  frontmatter?: Omit<TFrontmatter, "template" | "order">;
 }
 
 const MDXWrapper = ({ children, frontmatter }: MDXWrapperProps) => {

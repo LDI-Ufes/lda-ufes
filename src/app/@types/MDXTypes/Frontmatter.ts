@@ -1,6 +1,7 @@
 export type TFrontmatter = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   order: number;
   cover?: string;
+  template: "page" | "chapter";
 };
