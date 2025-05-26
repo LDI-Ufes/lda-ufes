@@ -1,7 +1,6 @@
 import { HomeBanner } from "@/app/components/layout/Home/HomeBanner";
 import { HomePage } from "@/app/components/layout/Home/HomePage";
 import { HomeSummary } from "@/app/components/layout/Home/HomeSummary";
-import { Footer } from "@/app/components/theme";
 import Catalog from "@/app/components/theme/Catalog";
 import { Container } from "@/app/components/ui/Container";
 
@@ -55,6 +54,7 @@ const Home = () => {
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline"
                   >
+                    {" "}
                     http://acervo.sead.ufes.br/materiais/quimica-ambiental
                   </a>
                 </Catalog.Paragraph>
@@ -77,7 +77,6 @@ const Home = () => {
           </Catalog>
         </Container>
       </HomePage>
-      <Footer />
     </>
   );
 };
