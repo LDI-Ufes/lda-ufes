@@ -7,6 +7,7 @@ import {
   DialogTitle,
 } from "@/app/components/ui/Dialog";
 import { StepsContent } from "./StepsContent";
+import { USER_PREFERENCES_KEYS } from "@/app/data/UserPreferences";
 
 export function Onboarding() {
   const {
@@ -27,7 +28,7 @@ export function Onboarding() {
   const handleSkip = () => {
     setHasSeenOnboarding(true);
     setIsOpen(false);
-    localStorage.setItem("hasOnboarding", "completed");
+    localStorage.setItem(USER_PREFERENCES_KEYS.HAS_SEEN_ONBOARDING, "true");
   };
 
   const handleNext = () => {
@@ -36,7 +37,7 @@ export function Onboarding() {
     } else {
       setHasSeenOnboarding(true);
       setIsOpen(false);
-      localStorage.setItem("hasOnboarding", "completed");
+      localStorage.setItem(USER_PREFERENCES_KEYS.HAS_SEEN_ONBOARDING, "true");
     }
   };
 

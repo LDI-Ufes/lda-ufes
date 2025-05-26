@@ -1,3 +1,4 @@
+import { USER_PREFERENCES_KEYS } from "@/app/data/UserPreferences";
 import { createContext, useEffect, useState, type ReactNode } from "react";
 
 interface OnboardingContextData {
@@ -19,9 +20,11 @@ function OnboardingProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const storedOnboarding = localStorage.getItem("hasOnboarding");
+    const storedOnboarding = localStorage.getItem(
+      USER_PREFERENCES_KEYS.HAS_SEEN_ONBOARDING,
+    );
 
-    if (storedOnboarding === "completed") {
+    if (storedOnboarding === "true") {
       setHasSeenOnboarding(true);
       setIsOpen(false);
     }
