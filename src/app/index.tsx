@@ -16,7 +16,7 @@ if (!root) {
 createRoot(root).render(
   <StrictMode>
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.VITE_APP_BASE_PATH || "/"}>
         <Loader />
         <OnboardingProvider>
           <Onboarding />
