@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Sumario: React.FC = () => {
   return (
-    <div className="p-4">
+    <div className="sticky top-20 self-start p-4">
       <h2 className="mb-4 text-2xl font-bold">Sumário</h2>
       <nav>
         <ul className="space-y-2">
