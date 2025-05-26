@@ -14,16 +14,15 @@ const HeaderSearch = ({ className }: { className: string }) => {
         type="text"
         placeholder="Pesquisar..."
         className={cn(
-          "w-full rounded-lg border border-gray-300 p-4 focus:border-transparent focus:ring-2 focus:ring-blue-500",
+          "hidden h-10 w-full rounded-lg border-2 border-gray-300 p-4 focus:border-transparent focus:ring-2 focus:ring-blue-500 lg:block",
           className,
         )}
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
       <Button
-        variant="ghost"
-        size="icon"
-        className="absolute top-0 right-0"
+        variant="secondary"
+        className="lg:absolute lg:top-0 lg:right-0 lg:border-none"
         onClick={(e) => {
           e.preventDefault();
           navigate(`/pesquisa?q=${value}`);

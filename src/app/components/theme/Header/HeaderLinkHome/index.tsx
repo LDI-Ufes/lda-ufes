@@ -6,7 +6,7 @@ const HeaderLinkHome = ({ text }: { text: string }) => {
   return (
     <Button variant="secondary" textStyle="uppercase" asChild>
       <Link to="/" className="flex items-center gap-2">
-        <MdHome className="text-2xl text-blue-600" />
+        <MdHome className="text-2xl" />
         {text}
       </Link>
     </Button>
