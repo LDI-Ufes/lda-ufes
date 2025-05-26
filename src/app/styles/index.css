@@ -2,85 +2,85 @@
 @import "./fonts.css";
 
 @theme {
-    --theme-font-size: 16px;
-    --theme-letter-spacing: 0.01em;
-    --theme-line-height: 1.5;
-    --color-theme: #161616;
-    --color-theme-background: #ffffff;
-    --color-primary: #00605F;
-    --color-secondary: #AB2020;
+  --theme-font-size: 16px;
+  --theme-letter-spacing: 0.01em;
+  --theme-line-height: 1.5;
+  --color-theme: #161616;
+  --color-theme-background: #ffffff;
+  --color-primary: #00605f;
+  --color-secondary: #ab2020;
 }
 
-
 html.dark {
-    --color-theme: #DBDBDB;
-    --color-theme-background: #161616;
-    --color-primary: #01B792;
-    --color-secondary: #FF7A7A;
+  --color-theme: #dbdbdb;
+  --color-theme-background: #161616;
+  --color-primary: #01b792;
+  --color-secondary: #ff7a7a;
 }
 
 html.cream {
-    --color-theme-background: #F0E6D2;
-    --color-theme: #2C2C2C;
-    --color-primary: #00605F;
-    --color-secondary: #AB2020;
+  --color-theme-background: #f0e6d2;
+  --color-theme: #2c2c2c;
+  --color-primary: #00605f;
+  --color-secondary: #ab2020;
 }
 
-
 @layer base {
-    html {
-        font-family: 'Atkinson Hyperlegible Next', sans-serif;
-        background-color: var(--color-theme-background);
-        color: var(--color-theme);
-        transition: background-color 0.3s ease, color 0.3s ease;
-        font-size: var(--theme-font-size);
-        letter-spacing: var(--theme-letter-spacing);
-        line-height: var(--theme-line-height);
-        scroll-padding-top: 100px;
-    }
+  html {
+    font-family: "Atkinson Hyperlegible Next", sans-serif;
+    background-color: var(--color-theme-background);
+    color: var(--color-theme);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    font-size: var(--theme-font-size);
+    letter-spacing: var(--theme-letter-spacing);
+    line-height: var(--theme-line-height);
+    scroll-padding-top: 100px;
+  }
 
-    p,
-    blockquote,
-    dl,
-    dd,
-    hr,
-    figure,
-    details,
-    li,
-    td,
-    th {
-        letter-spacing: inherit !important;
-        line-height: inherit !important;
-    }
+  p,
+  blockquote,
+  dl,
+  dd,
+  hr,
+  figure,
+  details,
+  li,
+  td,
+  th {
+    letter-spacing: inherit !important;
+    line-height: inherit !important;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        letter-spacing: inherit !important;
-        line-height: calc(var(--theme-line-height) / 1.325) !important;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: inherit !important;
+    line-height: calc(var(--theme-line-height) / 1.325) !important;
+  }
 }
 
 /* Estilos para desabilitar animações */
 .animations-disabled *,
 .animations-disabled *::before,
 .animations-disabled *::after {
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
 }
 
 .colors-disabled {
-    --color-theme: #000000 !important;
-    --color-theme-background: #ffffff !important;
-    --color-primary: #A9A9A9 !important;
-    --color-secondary: #A9A9A9 !important;
+  --color-theme: #000000 !important;
+  --color-theme-background: #ffffff !important;
+  --color-primary: #a9a9a9 !important;
+  --color-secondary: #a9a9a9 !important;
 }
 
 html.colors-disabled {
-    filter: grayscale(100%);
+  filter: grayscale(100%);
 }
