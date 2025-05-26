@@ -11,6 +11,7 @@ Seu principal objetivo é oferecer uma experiência tecnológica que simplifique
 - [Bibliotecas Importantes](#bibliotecas-importantes)
 - [Qualidade de Código e Padronização](#qualidade-de-código-e-padronização)
 - [Estrutura de Pastas](#estrutura-de-pastas)
+- [Estrutura de Páginas](#estrutura-de-páginas)
 - [Configuração e Execução do Projeto](#configuração-e-execução-do-projeto)
 
 # Stack Tecnológica
@@ -42,10 +43,26 @@ Seu principal objetivo é oferecer uma experiência tecnológica que simplifique
 
 # Estrutura de Pastas
 
-- `/app` (Core do projeto - não mexa)
-- `/home` (Página inicial)
-- `/pages` (Arquivos das páginas em .mdx)
-- `/public` (Imagens e arquivos)
+| Pasta     | Descrição                    |
+| --------- | ---------------------------- |
+| `/app`    | Core do projeto - não mexa   |
+| `/home`   | Página inicial               |
+| `/pages`  | Arquivos das páginas em .mdx |
+| `/public` | Imagens e arquivos           |
+
+# Estrutura de Páginas
+
+O MDX é uma extensão do Markdown que permite incorporar componentes React diretamente nos arquivos de conteúdo. No nosso projeto, utilizamos o MDX para criar páginas dinâmicas onde podemos misturar conteúdo em Markdown com componentes React interativos.
+
+O frontmatter (a seção entre `---` no início do arquivo) é uma característica do MDX que nos permite definir metadados para cada página, como título, ordem e template, que são utilizados para configurar a apresentação e estrutura do capítulo no livro digital.
+
+| Propriedade | Descrição                                                                                           |
+| ----------- | --------------------------------------------------------------------------------------------------- |
+| `order`     | Define a ordem de exibição do capítulo no sumário. Neste caso, é o primeiro capítulo (1).           |
+| `template`  | Especifica o template a ser usado para renderizar o conteúdo. Valores possíveis: `chapter`, `page`. |
+| `title`     | Define o título principal do capítulo que será exibido na página.                                   |
+| `subtitle`  | Fornece um subtítulo ou descrição adicional para o capítulo.                                        |
+| `cover`     | Especifica o caminho para a imagem de capa do capítulo. O diretorio é `./public/covers/`.           |
 
 # Configuração e Execução do Projeto
 
