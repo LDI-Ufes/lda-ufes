@@ -21,6 +21,7 @@ export default defineConfig({
     tailwindcss(),
     tsconfigPaths(),
   ],
+  publicDir: "src/public",
   resolve: {
     alias: {
       "@/pages": path.resolve(__dirname, "./src/pages"),

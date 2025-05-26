@@ -13,14 +13,28 @@ import H3 from "@/app/components/ui/H3";
 // TODO: Refatorar esse provider para uma organização melhor (24/05/2025)
 export function MDXProvider({ children }: { children: React.ReactNode }) {
   const components = useMDXComponents({
-    h1: (props) => <h1 className="mb-6 text-4xl font-bold" {...props} />,
-    h2: (props) => <h2 className="mb-4 text-3xl font-semibold" {...props} />,
-    h3: (props) => <h3 className="mb-3 text-2xl font-medium" {...props} />,
-    h4: (props) => <h4 className="mb-2 text-xl font-medium" {...props} />,
-    p: (props) => <p className="mb-4 text-base leading-7" {...props} />,
-    ul: (props) => <ul className="mb-4 list-inside list-disc" {...props} />,
-    ol: (props) => <ol className="mb-4 list-inside list-decimal" {...props} />,
-    li: (props) => <li className="mb-2" {...props} />,
+    h1: (props) => (
+      <h1 className="text-primary mb-6 text-4xl font-bold" {...props} />
+    ),
+    h2: (props) => (
+      <h2 className="text-primary mb-4 text-3xl font-semibold" {...props} />
+    ),
+    h3: (props) => (
+      <h3 className="text-primary mb-3 text-2xl font-medium" {...props} />
+    ),
+    h4: (props) => (
+      <h4 className="text-primary mb-2 text-xl font-medium" {...props} />
+    ),
+    p: (props) => (
+      <p className="text-theme mb-4 text-base leading-7" {...props} />
+    ),
+    ul: (props) => (
+      <ul className="text-theme mb-4 list-inside list-disc" {...props} />
+    ),
+    ol: (props) => (
+      <ol className="text-theme mb-4 list-inside list-decimal" {...props} />
+    ),
+    li: (props) => <li className="text-theme mb-2" {...props} />,
     blockquote: (props) => (
       <blockquote
         className="my-4 border-l-4 border-gray-300 pl-4 italic"
