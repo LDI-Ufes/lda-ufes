@@ -1,12 +1,12 @@
 export type ThemeState = {
   themeColor: "light" | "dark" | "cream" | "";
   setThemeColor: (themeColor: "light" | "dark" | "cream" | "") => void;
-  letterSpacing: number; // em 'em'
-  setLetterSpacing: (spacing: number) => void;
-  lineHeight: number; // multiplicador
-  setLineHeight: (height: number) => void;
-  fontSize: number; // em 'px'
-  setFontSize: (size: number) => void;
+  letterSpacing: string | ""; // em 'em'
+  setLetterSpacing: (spacing: string | "") => void;
+  lineHeight: string | ""; // multiplicador
+  setLineHeight: (height: string | "") => void;
+  fontSize: string | ""; // em 'px'
+  setFontSize: (size: string | "") => void;
   animationsDisabled: boolean;
   setAnimationsDisabled: (disabled: boolean) => void;
   colorsDisabled: boolean;
