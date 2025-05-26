@@ -41,14 +41,14 @@ export const SearchInput = ({ placeholder, className }: SearchInputProps) => {
   }, [queryParamTerm]);
 
   return (
-    <>
+    <div className="relative">
       <input
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder={placeholder}
         className={cn(
-          "w-full rounded-lg border border-gray-300 p-4 focus:border-transparent focus:ring-2 focus:ring-blue-500",
+          "focus:ring-secondary h-12 w-full rounded-lg border p-4 focus:border-transparent focus:ring-4",
           className,
         )}
       />
@@ -57,6 +57,6 @@ export const SearchInput = ({ placeholder, className }: SearchInputProps) => {
           <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-blue-500"></div>
         </div>
       )}
-    </>
+    </div>
   );
 };
