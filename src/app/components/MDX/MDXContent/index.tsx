@@ -20,8 +20,7 @@ export const MDXContent: React.FC<LazyMDXPageProps> = ({ pageName }) => {
     let isMounted = true;
     const loadMdx = async () => {
       try {
-        const path = `/src/pages/${pageName}.mdx`;
-        const module = await import(/* @vite-ignore */ path);
+        const module = await import(`@/pages/${pageName}.mdx`);
 
         if (isMounted) {
           if (module.default && module.frontmatter) {
