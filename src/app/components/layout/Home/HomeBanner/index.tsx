@@ -41,7 +41,7 @@ export const HomeBanner = ({
               {authors.map((author) => (
                 <p
                   key={author.name}
-                  className="text-theme text-xs font-bold md:text-sm lg:text-base"
+                  className="text-theme text-sm font-bold md:text-base"
                 >
                   {author.name}
                 </p>
