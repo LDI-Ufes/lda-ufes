@@ -73,7 +73,7 @@ const Summary = () => {
                     </span>
                   )}
                   <Link
-                    to={page.page}
+                    to={`/${page.page}`}
                     className="flex-grow text-base font-bold hover:underline lg:text-lg"
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -87,7 +87,7 @@ const Summary = () => {
                       {page.subchapters.map((subchapter) => (
                         <Link
                           key={subchapter.id}
-                          to={`./${page.page}#${subchapter.id}`}
+                          to={`.{/${page.page}}#${subchapter.id}`}
                           className="text-theme py-1 hover:underline"
                         >
                           {subchapter.title}

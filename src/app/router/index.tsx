@@ -4,7 +4,7 @@ import { Pagination } from "./routes";
 import { MDXContent } from "@/app/components/MDX";
 import { Home } from "@/home";
 import { MDXProvider } from "@/app/contexts/MDXProvider";
-import { Search } from "@/app/components/Search";
+import { Search } from "@/app/components/search";
 import { useScrollToHash } from "@/app/hooks/useScrollToHash";
 
 const Router: React.FC = () => {
