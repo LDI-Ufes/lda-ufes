@@ -71,7 +71,7 @@ const Summary = ({ className, hasSearch = true }: SummaryProps) => {
 
           {window.innerWidth < 1024 && (
             <Button variant="secondary" asChild>
-              <Link to={`/${Pagination[0].page}`}>
+              <Link to={"/"}>
                 <MdHome className="size-6" />
               </Link>
             </Button>
