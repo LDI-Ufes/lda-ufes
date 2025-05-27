@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Header, Footer, Content, Summary } from "@/app/components/theme";
-import { ButtonToTop } from "../../theme/ButtonToTop";
+import { ButtonActionSummary } from "../../theme/ButtonActionSummary";
 
 interface PageProps {
   children: ReactNode;
@@ -50,10 +50,10 @@ export const Page = ({
       )}
       <main className="relative mx-auto flex max-w-7xl flex-col justify-between gap-8 py-5 lg:flex-row lg:py-16">
         <Content>{children}</Content>
-        {hasSummary && <Summary />}
+        {hasSummary && <Summary className="hidden" />}
       </main>
       <Footer />
-      <ButtonToTop />
+      <ButtonActionSummary />
     </>
   );
 };

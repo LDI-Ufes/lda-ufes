@@ -13,22 +13,26 @@ const SummarySearch = ({ className }: { className?: string }) => {
       <input
         type="text"
         placeholder="Buscar"
-        className="focus:secondary h-10 w-full flex-1 rounded-xl border-2 border-slate-300 p-4 focus:border-transparent focus:ring-2 lg:h-12"
+        className="focus:secondary bg-theme-background h-10 w-full flex-1 rounded-xl border-2 border-slate-300 p-4 focus:border-transparent focus:ring-2 lg:h-12"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
       <Button
         variant="ghost"
         className="absolute top-0 right-0 border-none max-lg:border-transparent lg:top-0 lg:right-0"
-        onClick={(e) => {
-          e.preventDefault();
-          navigate(`/pesquisa?q=${value}`);
-        }}
+        onClick={
+          value
+            ? (e) => {
+                e.preventDefault();
+                navigate(`/pesquisa?q=${value}`);
+              }
+            : undefined
+        }
       >
         <FiSearch
           className={cn(
             "max-lg:text-secondary size-5 lg:text-slate-500",
-            value && "text-secondary",
+            value && "lg:text-secondary",
           )}
         />
       </Button>
