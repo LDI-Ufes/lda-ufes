@@ -31,7 +31,7 @@ const HeaderTitle = ({
       <p
         className={cn(
           "text-primary truncate text-sm leading-none font-bold uppercase lg:text-lg",
-          hasSummary && "text-center",
+          hasSummary && "lg:text-center",
         )}
       >
         {title}

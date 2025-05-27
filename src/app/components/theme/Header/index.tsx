@@ -45,7 +45,7 @@ export const Header = ({
   return (
     <header
       className={cn(
-        "bg-theme-background shadow-primary/10 fixed top-0 z-10 flex w-full flex-col justify-between shadow-2xl max-lg:h-16 lg:min-h-20",
+        "bg-theme-background shadow-primary/10 fixed top-0 z-10 flex w-full flex-col justify-between shadow-2xl max-lg:h-20 lg:min-h-20",
         hasProgress ? "pt-4 lg:pt-6" : "py-4 lg:py-6",
       )}
     >
