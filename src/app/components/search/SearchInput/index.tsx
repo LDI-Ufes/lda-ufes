@@ -38,7 +38,7 @@ export const SearchInput = ({ placeholder, className }: SearchInputProps) => {
     if (queryParamTerm !== inputValue) {
       setInputValue(queryParamTerm);
     }
-  }, [queryParamTerm]);
+  }, [queryParamTerm, inputValue]);
 
   return (
     <div className="relative">
