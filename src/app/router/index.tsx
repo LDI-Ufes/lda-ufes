@@ -6,6 +6,7 @@ import { Home } from "@/home";
 import { MDXProvider } from "@/app/contexts/MDXProvider";
 import { Search } from "@/app/components/search";
 import { useScrollToHash } from "@/app/hooks/useScrollToHash";
+import { NotFound } from "@/app/components/layout/NotFound";
 
 const Router: React.FC = () => {
   useScrollToHash();
@@ -25,6 +26,7 @@ const Router: React.FC = () => {
               />
             );
           })}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </MDXProvider>
