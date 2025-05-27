@@ -200,7 +200,7 @@ const TextAdjustments = ({
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between gap-2">
-            <p className="text-sm font-bold uppercase">Tamanho do texto</p>
+            <p className="text-sm font-bold uppercase">Espaçamento entre linhas</p>
             <div className="flex items-center gap-2">
               <Button
                 variant="ghost"
