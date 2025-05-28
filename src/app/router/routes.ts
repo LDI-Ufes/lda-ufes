@@ -26,7 +26,8 @@ const mdxModules = import.meta.glob<MdxModule>(`/src/pages/*.mdx`, {
 // Adicionado para importar o conteúdo bruto dos arquivos MDX
 const mdxRawContentModules = import.meta.glob<string>(`/src/pages/*.mdx`, {
   eager: true,
-  as: "raw",
+  query: "?raw",
+  import: "default",
 });
 
 function extractSubChapters(mdxContent: string): SubChapter[] {
