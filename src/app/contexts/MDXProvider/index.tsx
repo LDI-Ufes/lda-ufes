@@ -13,6 +13,7 @@ import { Blockquote } from "@/app/components/ui/QuoteBox";
 import { Link } from "@/app/components/ui/Link";
 import { Note } from "@/app/components/ui/Note";
 import { ChapterTitle } from "@/app/components/ui/ChapterTitle";
+import { ChapterSubtitle } from "@/app/components/ui/ChapterSubtitle";
 
 // TODO: Refatorar esse provider para uma organização melhor (24/05/2025)
 export function MDXProvider({ children }: { children: React.ReactNode }) {
@@ -64,6 +65,7 @@ export function MDXProvider({ children }: { children: React.ReactNode }) {
     Link: (props) => <Link {...props} />,
     Note: (props) => <Note {...props} />,
     ChapterTitle: (props) => <ChapterTitle {...props} />,
+    ChapterSubtitle: (props) => <ChapterSubtitle {...props} />,
     img: (props) => (
       <img className="my-4 h-auto max-w-full rounded-lg" {...props} />
     ),
