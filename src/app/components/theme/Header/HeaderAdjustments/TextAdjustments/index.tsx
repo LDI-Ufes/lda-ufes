@@ -245,7 +245,7 @@ const TextAdjustments = ({
                 ]
               }
             </span>
-            . Este é o tamanho de texto recomendado.
+            . Este é o espaçamento entre linhas recomendado.
           </p>
         </div>
 
