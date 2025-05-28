@@ -10,6 +10,7 @@ import NoBreak from "@/app/components/ui/NoBreak";
 import H2 from "@/app/components/ui/H2";
 import H3 from "@/app/components/ui/H3";
 import { Blockquote } from "@/app/components/ui/QuoteBox";
+import { Link } from "@/app/components/ui/Link";
 
 // TODO: Refatorar esse provider para uma organização melhor (24/05/2025)
 export function MDXProvider({ children }: { children: React.ReactNode }) {
@@ -58,6 +59,7 @@ export function MDXProvider({ children }: { children: React.ReactNode }) {
     a: (props) => (
       <a className="text-blue-600 underline hover:text-blue-800" {...props} />
     ),
+    Link: (props) => <Link {...props} />,
     img: (props) => (
       <img className="my-4 h-auto max-w-full rounded-lg" {...props} />
     ),
