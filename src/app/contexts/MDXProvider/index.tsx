@@ -9,6 +9,7 @@ import Strong from "@/app/components/ui/Strong";
 import NoBreak from "@/app/components/ui/NoBreak";
 import H2 from "@/app/components/ui/H2";
 import H3 from "@/app/components/ui/H3";
+import { Blockquote } from "@/app/components/ui/QuoteBox";
 
 // TODO: Refatorar esse provider para uma organização melhor (24/05/2025)
 export function MDXProvider({ children }: { children: React.ReactNode }) {
@@ -35,12 +36,13 @@ export function MDXProvider({ children }: { children: React.ReactNode }) {
       <ol className="text-theme mb-4 list-inside list-decimal" {...props} />
     ),
     li: (props) => <li className="text-theme mb-2" {...props} />,
-    blockquote: (props) => (
-      <blockquote
-        className="my-4 border-l-4 border-gray-300 pl-4 italic"
-        {...props}
-      />
-    ),
+    // blockquote: (props) => (
+    //   <blockquote
+    //     className="my-4 border-l-4 border-gray-300 pl-4 italic"
+    //     {...props}
+    //   />
+    // ),
+    blockquote: (props) => <Blockquote>{props.children || <></>}</Blockquote>,
     code: (props) => (
       <code
         className="rounded bg-gray-100 px-1 py-0.5 font-mono text-sm"
