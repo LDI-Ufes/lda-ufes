@@ -2,7 +2,7 @@ import { MDXProvider as OriginalMDXProvider } from "@mdx-js/react";
 import { useMDXComponents } from "@/app/hooks/useMDXComponents";
 import Box from "@/app/components/ui/Box";
 import EquationBox from "@/app/components/ui/EquationBox";
-import Activity from "@/app/components/ui/Activity";
+import { Activity } from "@/app/components/ui/Activity";
 import Figure from "@/app/components/ui/Figure";
 import Equation from "@/app/components/ui/Equation";
 import Strong from "@/app/components/ui/Strong";
@@ -33,9 +33,9 @@ export function MDXProvider({ children }: { children: React.ReactNode }) {
       <ul className="text-theme mb-4 list-inside list-disc" {...props} />
     ),
     ol: (props) => (
-      <ol className="text-theme mb-4 list-inside list-decimal" {...props} />
+      <ol className="text-theme mb-4 list-inside ps-4 list-decimal" {...props} />
     ),
-    li: (props) => <li className="text-theme mb-2" {...props} />,
+    li: (props) => <li className="text-theme mb-2 marker:text-secondary ps-6" {...props} />,
     // blockquote: (props) => (
     //   <blockquote
     //     className="my-4 border-l-4 border-gray-300 pl-4 italic"
