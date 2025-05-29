@@ -41,18 +41,22 @@ export function Onboarding() {
     }
   };
 
+  const handleBack = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
   const CurrentStepComponent = StepsContent[currentStep].component;
   const isLastStep = currentStep === StepsContent.length - 1;
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="bg-white sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>{StepsContent[currentStep].title}</DialogTitle>
-        </DialogHeader>
+      <DialogContent className="p-0 lg:max-w-5xl">
         <CurrentStepComponent
           onSkip={handleSkip}
           onNext={handleNext}
+          onBack={handleBack}
           isLastStep={isLastStep}
         />
       </DialogContent>
