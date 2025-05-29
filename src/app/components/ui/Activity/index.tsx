@@ -1,17 +1,19 @@
-import React from "react";
-
 interface ActivityProps {
-  title: string;
   children: React.ReactNode;
+  title: string;
 }
 
-const Activity: React.FC<ActivityProps> = ({ title, children }) => {
+const Activity = ({ children, title }: ActivityProps) => {
   return (
-    <div className="atv">
-      <h3 className="atividade">{title}</h3>
-      {children}
-    </div>
+    <section className="border-3 border-primary rounded-2xl mb-8">
+      <div className="bg-primary text-white text-3xl font-bold p-4 rounded-t-xl">
+        {title}
+      </div>
+      <div className="p-4 rounded-b-xl">
+        {children}
+      </div>
+    </section>
   );
 };
 
-export default Activity;
+export { Activity };

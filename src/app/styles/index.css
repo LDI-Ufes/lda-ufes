@@ -39,6 +39,17 @@ html.cream {
     scroll-padding-top: 100px;
   }
 
+  ol,
+  ul {
+    list-style: revert;
+    list-style-position: inside;
+
+    ::marker {
+      color: var(--color-primary);
+      font-weight: 1000;
+    }
+  }
+
   p,
   blockquote,
   dl,
