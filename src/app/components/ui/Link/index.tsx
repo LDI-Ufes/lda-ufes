@@ -3,13 +3,11 @@ interface LinkProps {
     href: string;
   }
   
-  const Link = ({ children, href }: LinkProps) => {
-    const finalHref = new URL(href, window.location.origin).href;
-  
+  const Link = ({ children, href }: LinkProps) => {  
     return (
       <a
         className="text-primary"
-        href={finalHref}
+        href={href}
         target="_blank"
         rel="noopener noreferrer"
       >
