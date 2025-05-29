@@ -14,6 +14,7 @@ import { Link } from "@/app/components/ui/Link";
 import { Note } from "@/app/components/ui/Note";
 import { ChapterTitle } from "@/app/components/ui/ChapterTitle";
 import { ChapterSubtitle } from "@/app/components/ui/ChapterSubtitle";
+import { References } from "@/app/components/ui/References";
 
 // TODO: Refatorar esse provider para uma organização melhor (24/05/2025)
 export function MDXProvider({ children }: { children: React.ReactNode }) {
@@ -78,6 +79,7 @@ export function MDXProvider({ children }: { children: React.ReactNode }) {
     NoBreak: (props) => <NoBreak {...props} />,
     H2: (props) => <H2 {...props} />,
     H3: (props) => <H3 {...props} />,
+    References: (props) => <References {...props} />,
   });
 
   return (
