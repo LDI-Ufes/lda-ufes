@@ -1,33 +1,12 @@
-@import "tailwindcss";
-@import "./fonts.css";
-
 @theme {
   --theme-font-size: 16px;
   --theme-letter-spacing: 0.01em;
   --theme-line-height: 1.5;
-  --color-theme: #161616;
-  --color-theme-background: #ffffff;
-  --color-primary: #00605f;
-  --color-secondary: #ab2020;
-}
-
-html.dark {
-  --color-theme: #dbdbdb;
-  --color-theme-background: #161616;
-  --color-primary: #01b792;
-  --color-secondary: #ff7a7a;
-}
-
-html.cream {
-  --color-theme-background: #f0e6d2;
-  --color-theme: #2c2c2c;
-  --color-primary: #00605f;
-  --color-secondary: #ab2020;
 }
 
 @layer base {
   html {
-    font-family: "Atkinson Hyperlegible Next", sans-serif;
+    font-family: var(--theme-font-family);
     background-color: var(--color-theme-background);
     color: var(--color-theme);
     transition:
@@ -37,17 +16,6 @@ html.cream {
     letter-spacing: var(--theme-letter-spacing);
     line-height: var(--theme-line-height);
     scroll-padding-top: 100px;
-  }
-
-  ol,
-  ul {
-    list-style: revert;
-    list-style-position: inside;
-
-    ::marker {
-      color: var(--color-primary);
-      font-weight: 1000;
-    }
   }
 
   p,
@@ -75,7 +43,6 @@ html.cream {
   }
 }
 
-/* Estilos para desabilitar animações */
 .animations-disabled *,
 .animations-disabled *::before,
 .animations-disabled *::after {
