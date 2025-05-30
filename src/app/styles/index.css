@@ -50,6 +50,10 @@ html.cream {
     }
   }
 
+  p {
+    margin-bottom: 0;
+  }
+
   p,
   blockquote,
   dl,
