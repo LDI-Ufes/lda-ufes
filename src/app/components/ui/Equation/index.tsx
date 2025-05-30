@@ -13,7 +13,7 @@ const Equation: React.FC<EquationProps> = ({ id, imgSrc, children }) => {
         <div className="border-2 border-secondary rounded-lg p-2">
           {imgSrc ? <img className="eq" src={imgSrc} /> : children}
         </div>
-        <span className="box-eq mt-1 text-sm mb-4">equação {id}</span>
+        <span className="box-eq mt-1 text-sm mb-4 text-primary">equação {id}</span>
       </div>
     </div>
   );
