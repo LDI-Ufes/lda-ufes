@@ -47,7 +47,7 @@ export function MDXProvider({ children }: { children: React.ReactNode }) {
     //     {...props}
     //   />
     // ),
-    blockquote: (props) => <Blockquote>{props.children || <></>}</Blockquote>,
+    Blockquote: (props) => <Blockquote {...props} />,
     code: (props) => (
       <code
         className="rounded bg-gray-100 px-1 py-0.5 font-mono text-sm"
