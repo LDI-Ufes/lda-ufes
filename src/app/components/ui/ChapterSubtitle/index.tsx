@@ -4,7 +4,7 @@ interface ChapterSubtitleProps {
   
   const ChapterSubtitle = ({ children }: ChapterSubtitleProps) => {
     return (
-      <h2 className="text-primary text-3xl font-semibold mb-4">{children}</h2>
+      <h2 className="text-primary text-xl md:text-2xl lg:text-3xl font-semibold mb-4">{children}</h2>
     );
   };
   
