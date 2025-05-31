@@ -1,8 +1,10 @@
-import { HomeBanner } from "@/app/components/layout/Home/HomeBanner";
-import { HomePage } from "@/app/components/layout/Home/HomePage";
-import { HomeSummary } from "@/app/components/layout/Home/HomeSummary";
-import Catalog from "@/app/components/theme/Catalog";
-import { Container } from "@/app/components/ui/Container";
+import {
+  HomeBanner,
+  HomePage,
+  HomeSummary,
+} from "@/app/components/layout/Home";
+import { Catalog } from "@/app/components/theme/Catalog";
+import { Container } from "@/app/components/ui";
 
 const Home = () => {
   return (
@@ -11,12 +13,13 @@ const Home = () => {
         <HomeBanner
           title="Modelo de Livro Acessível Digital"
           year="2025"
-          cover=""
+          cover="/covers/image.svg"
           authors={[
-            { name: "Prof. Dr. Rafael de Queiroz" },
-            { name: "Prof. Dr. Josimar Ribeiro" },
-            { name: "Profa. Dra. Rosângela C. Barthus" },
+            { name: "Nome do autor 1" },
+            { name: "Nome do autor 2" },
+            { name: "Nome do autor 3" },
           ]}
+          presentation="Este é um modelo de Livro Digital Acessível (LDA), desenvolvido pelo Laboratório de Design Instrucional (LDI) da Universidade Federal do Espírito Santo (UFES). O objetivo deste projeto é fornecer um template flexível e acessível para a criação de livros digitais, seguindo as diretrizes de acessibilidade e usabilidade."
         />
 
         <Container className="my-14 flex flex-col gap-14 lg:mt-28 lg:gap-28">
@@ -24,54 +27,54 @@ const Home = () => {
           <Catalog>
             <Catalog.Header>
               <Catalog.Paragraph>
-                Dados Internacionais de Catalogação-na-publicação (CIP)
+                Dados Internacionais de Catalogação na Publicação (CIP)
               </Catalog.Paragraph>
               <Catalog.Paragraph>
-                (Biblioteca Central da Universidade Federal do Espírito Santo,
-                ES, Brasil)
+                (Nome da Biblioteca, Sigla da Instituição, País)
               </Catalog.Paragraph>
             </Catalog.Header>
 
             <Catalog.Content>
-              <Catalog.Author>Ferreira, Rafael de Queiroz.</Catalog.Author>
-              <Catalog.Code>F383q</Catalog.Code>
+              <Catalog.Author>Sobrenome, Nome do Autor.</Catalog.Author>
+              <Catalog.Code>Código da Obra (Ex: XXXXX)</Catalog.Code>
               <Catalog.WorkDetails>
                 <Catalog.Paragraph>
-                  Química ambiental [recurso eletrônico] / Rafael de Queiroz
-                  Ferreira, Josimar Ribeiro, Rosângela C. Barthus. - Dados
-                  eletrônicos. - 3. ed. - Vitória : Universidade Federal do
-                  Espírito Santo, Secretaria de Ensino a Distância, 2023.
-                  <br />1 recurso online (não paginado). : il.
+                  Título da obra [recurso eletrônico] / Nome do Autor Sobrenome,
+                  Nome do Autor Sobrenome. - Dados eletrônicos. - Edição. -
+                  Cidade : Nome da Instituição, Ano.
+                  <br />
+                  Descrição do recurso (ex: X recurso online (não paginado). :
+                  il.).
                 </Catalog.Paragraph>
                 <br />
                 <Catalog.Paragraph>Inclui bibliografia.</Catalog.Paragraph>
-                <Catalog.Paragraph>ISBN: 978-65-994410-7-3</Catalog.Paragraph>
+                <Catalog.Paragraph>ISBN: XXX-XX-XXXXXX-X-X</Catalog.Paragraph>
                 <Catalog.Paragraph>
                   Modo de acesso:
                   <a
-                    href="http://acervo.sead.ufes.br/materiais/quimica-ambiental"
+                    href="#"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline"
                   >
                     {" "}
-                    http://acervo.sead.ufes.br/materiais/quimica-ambiental
+                    Link para o recurso online
                   </a>
                 </Catalog.Paragraph>
                 <br />
                 <Catalog.Paragraph>
-                  1. Química ambiental. I. Ribeiro, Josimar. II. Barthus,
-                  Rosângela C. III. Título.
+                  1. Assunto Principal. I. Sobrenome, Nome do Colaborador. II.
+                  Sobrenome, Nome do Colaborador. III. Título.
                 </Catalog.Paragraph>
                 <Catalog.Paragraph className="text-right">
-                  CDU: 54
+                  CDU: XXX
                 </Catalog.Paragraph>
               </Catalog.WorkDetails>
             </Catalog.Content>
 
             <Catalog.Footer>
               <Catalog.Paragraph>
-                Elaborado por Adriana T. Caetano – CRB-6 ES-000827/O
+                Elaborado por Nome do Bibliotecário – CRB-X XX-XXXXXX/X
               </Catalog.Paragraph>
             </Catalog.Footer>
           </Catalog>

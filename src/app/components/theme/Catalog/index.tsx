@@ -28,19 +28,16 @@ const Content = ({ children }: CatalogProps) => {
 };
 Catalog.Content = Content;
 
-// Subcomponente Author
 const Author = ({ children }: CatalogProps) => {
   return <p className="my-2 ml-16 break-words">{children}</p>;
 };
 Catalog.Author = Author;
 
-// Subcomponente Code
 const Code = ({ children }: CatalogProps) => {
   return <div className="float-left my-2 mr-4 break-words">{children}</div>;
 };
 Catalog.Code = Code;
 
-// Subcomponente WorkDetails
 const WorkDetails = ({ children }: CatalogProps) => {
   return <div className="my-2 ml-16 pl-8 break-words">{children}</div>;
 };
@@ -51,7 +48,6 @@ const Paragraph = ({ children, className }: CatalogProps) => {
 };
 Catalog.Paragraph = Paragraph;
 
-// Subcomponente Footer
 const Footer = ({ children }: CatalogProps) => {
   return (
     <div className="mt-4 border-t border-gray-300 py-2 text-center">
@@ -61,4 +57,4 @@ const Footer = ({ children }: CatalogProps) => {
 };
 Catalog.Footer = Footer;
 
-export default Catalog;
+export { Catalog };

@@ -8,6 +8,7 @@ interface HomeBannerProps {
   title: string;
   year: string;
   cover: string;
+  presentation?: string;
   authors: { name: string }[];
 }
 
@@ -16,12 +17,13 @@ export const HomeBanner = ({
   year,
   authors,
   cover,
+  presentation,
 }: HomeBannerProps) => {
   return (
     <section className="relative lg:min-h-[80dvh]">
       {cover ? (
         <img
-          src={`/covers/${cover}`}
+          src={cover.startsWith("/") ? cover : `/${cover}`}
           alt="Banner"
           className="top-0 left-0 z-0 h-32 w-full object-cover sm:h-48 md:h-60 lg:absolute lg:h-full"
         />
@@ -48,14 +50,7 @@ export const HomeBanner = ({
               ))}
             </div>
           </div>
-          <p className="text-theme text-sm md:text-base">
-            Essa página é um livro digital publicado pela uperintendência de
-            Educação à Distância, com conteúdo produzido e revisado pelos
-            professores associados à Universidade Federal do Espírito Santo.
-            <br />
-            <br />
-            Aproveite!
-          </p>
+          <p className="text-theme text-sm md:text-base">{presentation}</p>
           <Button variant="secondary" asChild>
             <Link to={Pagination[0].page}>
               <MdPlayArrow className="size-6" /> Iniciar leitura
