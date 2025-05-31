@@ -29,22 +29,18 @@ export const Page = ({
       />
       {cover ? (
         <>
-          <div className="relative mt-16 h-48 w-full md:h-64 lg:mt-20 lg:h-96 xl:h-120">
-            <img
-              src={`/covers/${cover}`}
-              alt="Capa do livro"
-              className="h-full w-full object-cover"
-            />
-          </div>
+          <img
+            src={`/covers/${cover}`}
+            alt="Capa do livro"
+            className="relative mt-16 h-full max-h-48 w-full object-cover md:max-h-64 lg:mt-20 lg:max-h-96 xl:max-h-120"
+          />
         </>
       ) : (
         <>
-          <div className="from-primary to-primary/50 relative mt-16 h-48 w-full bg-gradient-to-b lg:mt-20 lg:h-64">
-            <div className="flex h-full items-center justify-center">
-              <p className="text-2xl font-bold text-white">
-                Nenhuma capa selecionada
-              </p>
-            </div>
+          <div className="from-primary to-primary/50 relative mt-16 flex h-screen max-h-48 w-full items-center justify-center bg-gradient-to-b object-cover md:max-h-64 lg:mt-20 lg:max-h-96 xl:max-h-120">
+            <p className="text-2xl font-bold text-white">
+              Nenhuma capa selecionada
+            </p>
           </div>
         </>
       )}
