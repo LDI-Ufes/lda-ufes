@@ -3,10 +3,9 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "../styles/index.css";
 import "./styles/app.css";
-import { OnboardingProvider } from "@/app/contexts";
+import { OnboardingProvider, ThemeProvider } from "@/app/contexts";
 import { Onboarding } from "@/app/components/onboarding";
 import Router from "@/app/router";
-import { ThemeProvider } from "@/app/contexts/ThemeProvider";
 import { Loader } from "@/app/components/layout/Loader";
 const root = document.getElementById("root");
 
