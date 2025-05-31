@@ -5,6 +5,7 @@ import { THEME_COLORS } from "@/app/hooks/useTheme/ThemeColor/constants.d";
 
 export const USER_PREFERENCES_KEYS = {
   THEME: "UserTheme",
+  THEME_CALCULATED_COLORS: "UserThemeCalculatedColors",
   FONT_SIZE: "UserFontSize",
   LINE_HEIGHT: "UserLineHeight",
   LETTER_SPACING: "UserLetterSpacing",
