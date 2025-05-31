@@ -76,7 +76,7 @@ Siga os passos abaixo para configurar e executar o projeto localmente:
 
     ```bash
     git clone <URL_DO_REPOSITORIO>
-    cd lda-react
+    cd lda-ufes
     ```
 
 2.  **Instale as dependências:**
