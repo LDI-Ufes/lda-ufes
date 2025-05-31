@@ -1,8 +1,12 @@
+![Capa do Projeto LDA](github-cover.png)
+
 # Descrição
 
-O projeto do Livro Digital Acessível (LDA) é uma iniciativa do Laboratório de Design Instrucional (LDI), vinculado à Superintendência de Educação a Distância (SEAD) da Universidade Federal do Espírito Santo (UFES), financiado pela CAPES através do edital Inova EAD 2023.
+O projeto do Livro Digital Acessível (LDA) é uma iniciativa do Laboratório de Design Instrucional (LDI), vinculado à Superintendência de Educação a Distância (SEAD) da Universidade Federal do Espírito Santo (UFES).
 
 Seu principal objetivo é oferecer uma experiência tecnológica que simplifique o processo de aprendizado e facilite a criação de recursos educacionais abertos de forma gratuita.
+
+Este projeto foi financiado pela Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) por meio do edital Inova EAD 2023.
 
 # Tabela de Conteúdos
 
