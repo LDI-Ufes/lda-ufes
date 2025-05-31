@@ -3,22 +3,13 @@
 
 @theme {
   --theme-font-family: "Atkinson Hyperlegible Next", sans-serif;
-  --color-theme: #161616;
-  --color-theme-background: #ffffff;
-  --color-primary: #00605f;
-  --color-secondary: #ab2020;
-}
+  --color-primary-base: #1745ab;
+  --color-secondary-base: #00605f;
+  --color-text-base: #161616;
+  --color-background-base: #ffffff;
 
-html.dark {
-  --color-theme: #dbdbdb;
-  --color-theme-background: #161616;
-  --color-primary: #01b792;
-  --color-secondary: #ff7a7a;
-}
-
-html.cream {
-  --color-theme-background: #f0e6d2;
-  --color-theme: #2c2c2c;
-  --color-primary: #00605f;
-  --color-secondary: #ab2020;
+  --color-primary: var(--color-primary-base);
+  --color-secondary: var(--color-secondary-base);
+  --color-theme: var(--color-text-base);
+  --color-theme-background: var(--color-background-base);
 }
