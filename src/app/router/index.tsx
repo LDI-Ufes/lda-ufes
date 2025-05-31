@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Pagination } from "./routes";
 import { MDXContent } from "@/app/components/MDX";
@@ -8,7 +8,7 @@ import { Search } from "@/app/components/search";
 import { useScrollToHash } from "@/app/hooks/useScrollToHash";
 import { NotFound } from "@/app/components/layout/NotFound";
 
-const Router: React.FC = () => {
+const Router = () => {
   useScrollToHash();
 
   return (

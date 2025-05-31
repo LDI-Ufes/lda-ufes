@@ -1,6 +1,5 @@
 import type { TFrontmatter } from "../@types";
 
-// Novo tipo para subcapítulos
 type SubChapter = {
   id: string;
   title: string;
@@ -12,7 +11,7 @@ type PaginationProps = {
   page: string;
   cover?: string;
   template: "page" | "chapter";
-  subchapters?: SubChapter[]; // Adicionado subchapters
+  subchapters?: SubChapter[];
 };
 
 interface MdxModule {
@@ -23,7 +22,6 @@ const mdxModules = import.meta.glob<MdxModule>(`/src/pages/*.mdx`, {
   eager: true,
 });
 
-// Adicionado para importar o conteúdo bruto dos arquivos MDX
 const mdxRawContentModules = import.meta.glob<string>(`/src/pages/*.mdx`, {
   eager: true,
   query: "?raw",
@@ -32,7 +30,7 @@ const mdxRawContentModules = import.meta.glob<string>(`/src/pages/*.mdx`, {
 
 function extractSubChapters(mdxContent: string): SubChapter[] {
   const subchapters: SubChapter[] = [];
-  const subchaptersRegex = /id="([^"]*)"[^>]*>(.*?)<\/h2>/gs;
+  const subchaptersRegex = /<h[2-6][^>]*id="([^"]*)"[^>]*>(.*?)<\/h[2-6]>/gs;
 
   let match;
   while ((match = subchaptersRegex.exec(mdxContent)) !== null) {
@@ -43,7 +41,6 @@ function extractSubChapters(mdxContent: string): SubChapter[] {
   return subchapters;
 }
 
-// Tipo para o retorno do primeiro map, antes do filter
 type MappedPage = {
   title: string;
   page: string;
@@ -53,7 +50,6 @@ type MappedPage = {
   subchapters?: SubChapter[];
 } | null;
 
-// Tipo para o resultado após o filter, garantindo que não é null
 type ValidPage = {
   title: string;
   page: string;
@@ -73,7 +69,7 @@ const GetPagination = Object.entries(mdxModules)
     }
 
     const frontmatter = module.frontmatter;
-    const rawContent = mdxRawContentModules[path]; // Obter conteúdo bruto
+    const rawContent = mdxRawContentModules[path];
 
     let subchapters: SubChapter[] = [];
     if (rawContent) {
@@ -125,8 +121,8 @@ export const Pagination: PaginationProps[] = GetPagination.map((p) => ({
 if (Pagination.length === 0) {
   console.warn(
     "LDA: Nenhuma página encontrada para paginação dinâmica. " +
-      "Verifique se seus arquivos .mdx estão em 'src/pages', " +
-      "possuem frontmatter com 'order' (numérico) e 'title' (string), " +
-      "e se o plugin MDX está configurado para exportar o frontmatter.",
+    "Verifique se seus arquivos .mdx estão em 'src/pages', " +
+    "possuem frontmatter com 'order' (numérico) e 'title' (string), " +
+    "e se o plugin MDX está configurado para exportar o frontmatter.",
   );
 }
