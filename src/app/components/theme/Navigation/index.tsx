@@ -12,36 +12,46 @@ export const Navigation = () => {
       UGetPageByPagination(capitulo.page)?.path === location.pathname.slice(1),
   );
 
-  const prevCapitulo = currentIndex > 0 ? Pagination[currentIndex - 1] : null;
-  const nextCapitulo =
+  const prevChapter = currentIndex > 0 ? Pagination[currentIndex - 1] : null;
+  const nextChapter =
     currentIndex < Pagination.length - 1 ? Pagination[currentIndex + 1] : null;
 
-  const pageInicial = currentIndex === 0 ? "/" : null;
+  const isFirstChapter = currentIndex === 0;
+  const isLastChapter = currentIndex === Pagination.length - 1;
 
   return (
-    <div className="mx-auto mt-8 flex justify-center gap-10 space-y-2">
-      {pageInicial && (
+    <div className="mx-auto mt-8 flex justify-center gap-10 space-y-2 md:mt-14 lg:mt-20">
+      {isFirstChapter && (
         <Button variant="secondary" asChild>
           <Link to="/" className="">
             <MdHomeFilled />
-            <span className="max-md:sr-only">Página</span> inicial
+            <span className="max-md:sr-only">Página inicial</span>
           </Link>
         </Button>
       )}
 
-      {prevCapitulo && (
+      {prevChapter && (
         <Button variant="secondary" asChild>
-          <Link to={`/${UGetPageByPagination(prevCapitulo.page)?.path}`}>
+          <Link to={`/${UGetPageByPagination(prevChapter.page)?.path}`}>
             <MdArrowBack />
             <span className="max-md:sr-only">Capítulo</span> anterior
           </Link>
         </Button>
       )}
-      {nextCapitulo && (
+      {nextChapter && (
         <Button variant="secondary" asChild>
-          <Link to={`/${UGetPageByPagination(nextCapitulo.page)?.path}`}>
+          <Link to={`/${UGetPageByPagination(nextChapter.page)?.path}`}>
             <span className="max-md:sr-only">Próximo</span> capítulo
             <MdArrowForward />
+          </Link>
+        </Button>
+      )}
+
+      {isLastChapter && (
+        <Button variant="secondary" asChild>
+          <Link to="/" className="">
+            <MdHomeFilled />
+            <span className="max-md:sr-only">Página inicial</span>
           </Link>
         </Button>
       )}
