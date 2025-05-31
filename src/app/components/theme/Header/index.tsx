@@ -33,7 +33,6 @@ export const Header = ({
       const documentHeight = document.documentElement.scrollHeight;
       const progress = (scrollPosition / (documentHeight - windowHeight)) * 100;
       setProgress(progress);
-      console.log(progress);
     };
 
     window.addEventListener("scroll", handleScroll);

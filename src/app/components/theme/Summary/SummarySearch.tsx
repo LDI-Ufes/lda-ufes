@@ -13,7 +13,7 @@ const SummarySearch = ({ className }: { className?: string }) => {
       <input
         type="text"
         placeholder="Buscar"
-        className="focus:secondary bg-theme-background h-10 w-full flex-1 rounded-xl border-2 border-slate-300 p-4 focus:border-transparent focus:ring-2 lg:h-12"
+        className="focus:secondary bg-theme-background border-theme/10 h-10 w-full flex-1 rounded-xl border-2 p-4 focus:border-transparent focus:ring-2 lg:h-12"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
