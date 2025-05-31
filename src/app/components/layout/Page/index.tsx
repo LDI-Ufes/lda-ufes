@@ -30,7 +30,7 @@ export const Page = ({
       {cover ? (
         <>
           <img
-            src={`/covers/${cover}`}
+            src={cover.startsWith("/") ? cover : `/${cover}`}
             alt="Capa do livro"
             className="relative mt-16 h-full max-h-48 w-full object-cover md:max-h-64 lg:mt-20 lg:max-h-96 xl:max-h-120"
           />
