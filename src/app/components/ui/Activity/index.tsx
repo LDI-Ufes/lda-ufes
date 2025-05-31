@@ -5,13 +5,11 @@ interface ActivityProps {
 
 const Activity = ({ children, title }: ActivityProps) => {
   return (
-    <section className="border-3 border-primary rounded-2xl mb-8">
-      <div className="bg-primary text-white text-lg md:text-xl lg:text-3xl font-bold p-4 rounded-t-xl">
+    <section className="border-primary mb-8 rounded-2xl border-3">
+      <div className="bg-primary rounded-t-xl p-4 text-base font-bold text-white md:text-lg lg:text-xl">
         {title}
       </div>
-      <div className="p-4 rounded-b-xl">
-        {children}
-      </div>
+      <div className="rounded-b-xl p-4">{children}</div>
     </section>
   );
 };

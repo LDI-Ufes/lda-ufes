@@ -8,4 +8,4 @@ const NoBreak: React.FC<NoBreakProps> = ({ children }) => {
   return <span className="nobreak">{children}</span>;
 };
 
-export default NoBreak;
+export { NoBreak };

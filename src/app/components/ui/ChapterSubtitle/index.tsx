@@ -1,11 +1,13 @@
 interface ChapterSubtitleProps {
-    children: React.ReactNode;
-  }
-  
-  const ChapterSubtitle = ({ children }: ChapterSubtitleProps) => {
-    return (
-      <h2 className="text-primary text-xl md:text-2xl lg:text-3xl font-semibold mb-4">{children}</h2>
-    );
-  };
-  
-  export { ChapterSubtitle };
+  children: React.ReactNode;
+}
+
+const ChapterSubtitle = ({ children }: ChapterSubtitleProps) => {
+  return (
+    <h2 className="text-primary mb-4 text-lg font-semibold md:text-xl lg:text-2xl">
+      {children}
+    </h2>
+  );
+};
+
+export { ChapterSubtitle };

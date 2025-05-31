@@ -4,16 +4,15 @@ interface FigureProps {
   imgSrc: string;
   alt: string;
   children: React.ReactNode;
-  figureNumber: string;
 }
 
-const Figure: React.FC<FigureProps> = ({ imgSrc, alt, children, figureNumber }) => {
+const Figure = ({ imgSrc, alt, children }: FigureProps) => {
   return (
-    <figure className="my-8 mx-auto max-w-3xl">
-      <img src={imgSrc} alt={alt} className="w-full h-auto rounded-md" />
-      <figcaption className="text-sm md:text-base mt-2"><span className="text-primary font-semibold">Figura {figureNumber} </span>{children}</figcaption>
+    <figure className="mx-auto my-8 max-w-3xl">
+      <img src={imgSrc} alt={alt} className="h-auto w-full rounded-md" />
+      <figcaption className="mt-2 text-sm md:text-base">{children}</figcaption>
     </figure>
   );
 };
 
-export default Figure;
+export { Figure };

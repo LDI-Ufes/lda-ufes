@@ -1,11 +1,9 @@
-import React from "react";
-
 interface EquationBoxProps {
   children: React.ReactNode;
 }
 
-const EquationBox: React.FC<EquationBoxProps> = ({ children }) => {
+const EquationBox = ({ children }: EquationBoxProps) => {
   return <div className="box-centro">{children}</div>;
 };
 
-export default EquationBox;
+export { EquationBox };

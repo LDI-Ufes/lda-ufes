@@ -4,8 +4,8 @@ interface StrongProps {
   children: React.ReactNode;
 }
 
-const Strong: React.FC<StrongProps> = ({ children }) => {
+const Strong = ({ children }: StrongProps) => {
   return <span className="bold">{children}</span>;
 };
 
-export default Strong;
+export { Strong };
