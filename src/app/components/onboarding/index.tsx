@@ -1,11 +1,6 @@
 import { useEffect } from "react";
 import { useOnboarding } from "@/app/hooks";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/app/components/ui/Dialog";
+import { Dialog, DialogContent } from "@/app/components/ui/Dialog";
 import { StepsContent } from "./StepsContent";
 import { USER_PREFERENCES_KEYS } from "@/app/data/UserPreferences";
 

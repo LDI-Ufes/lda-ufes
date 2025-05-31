@@ -1,6 +1,6 @@
 # Descrição
 
-O projeto do Livro Digital Acessível (LDA) é uma iniciativa do Laboratório de Design Instrucional (LDI), vinculado à Superintendência de Educação a Distância (SEAD) da Universidade Federal do Espírito Santo (UFES).
+O projeto do Livro Digital Acessível (LDA) é uma iniciativa do Laboratório de Design Instrucional (LDI), vinculado à Superintendência de Educação a Distância (SEAD) da Universidade Federal do Espírito Santo (UFES), financiado pela CAPES através do edital Inova EAD 2023.
 
 Seu principal objetivo é oferecer uma experiência tecnológica que simplifique o processo de aprendizado e facilite a criação de recursos educacionais abertos de forma gratuita.
 
@@ -8,11 +8,12 @@ Seu principal objetivo é oferecer uma experiência tecnológica que simplifique
 
 - [Descrição](#descrição)
 - [Stack Tecnológica](#stack-tecnológica)
-- [Bibliotecas Importantes](#bibliotecas-importantes)
 - [Qualidade de Código e Padronização](#qualidade-de-código-e-padronização)
 - [Estrutura de Pastas](#estrutura-de-pastas)
 - [Estrutura de Páginas](#estrutura-de-páginas)
 - [Configuração e Execução do Projeto](#configuração-e-execução-do-projeto)
+- [Autores](#autores)
+- [Licença](#licença)
 
 # Stack Tecnológica
 
@@ -22,24 +23,12 @@ Seu principal objetivo é oferecer uma experiência tecnológica que simplifique
 - **Tailwind CSS:** Framework CSS utilitário para estilização rápida.
 - **MDX:** Permite usar componentes JSX em arquivos Markdown.
 
-# Bibliotecas Importantes
-
-- **@mdx-js/react e @mdx-js/rollup:** Para suporte a MDX.
-- **@radix-ui/react-dialog e @radix-ui/react-slot:** Componentes UI acessíveis e personalizáveis.
-- **react-router-dom:** Para gerenciamento de rotas na aplicação.
-- **jsdom:** Para simular um ambiente DOM em Node.js.
-- **react-icons:** Pacote de ícones populares.
-- **class-variance-authority, clsx, tailwind-merge:** Utilitários para classes CSS com Tailwind CSS.
-- **remark-frontmatter, remark-mdx-frontmatter:** Para processar metadados em arquivos Markdown/MDX.
-- **striptags:** Para remover tags HTML de strings.
-- **vite-tsconfig-paths:** Para resolver caminhos de importação definidos no `tsconfig.json` com o Vite.
-
 # Qualidade de Código e Padronização
 
 - **ESLint:** Ferramenta de linting para JavaScript e TypeScript.
 - **Prettier:** Formatador de código automático.
 - **Husky:** Gerenciamento de git hooks para garantir a qualidade do código antes de commits/pushes (ex: rodar linters e testes).
-- **lint-staged:** Permite rodar linters/formatadores apenas nos arquivos modificados que estão prestes a serem commitados.
+- **Lint Staged:** Permite rodar linters/formatadores apenas nos arquivos modificados que estão prestes a serem commitados.
 
 # Inicialização do Husky (Importante para evitar commits com erros)
 
@@ -52,12 +41,14 @@ O Husky é uma ferramenta essencial para garantir a qualidade do código atravé
 
 # Estrutura de Pastas
 
-| Pasta     | Descrição                    |
-| --------- | ---------------------------- |
-| `/app`    | Core do projeto - não mexa   |
-| `/home`   | Página inicial               |
-| `/pages`  | Arquivos das páginas em .mdx |
-| `/public` | Imagens e arquivos           |
+| Pasta     | Descrição                                  |
+| --------- | ------------------------------------------ |
+| `/app`    | Core do projeto (mantida pelo repositório) |
+| `/home`   | Página inicial                             |
+| `/pages`  | Arquivos das páginas em .mdx               |
+| `/public` | Imagens e arquivos                         |
+| `/fonts`  | Fontes do projeto                          |
+| `/styles` | Folhas de estilo                           |
 
 # Estrutura de Páginas
 
@@ -122,3 +113,11 @@ Siga os passos abaixo para configurar e executar o projeto localmente:
     # ou
     # yarn lint
     ```
+
+# Autores
+
+Este projeto é uma nova versão de um produto concebido e desenvolvido originalmente pela equipe do Laboratório de Design Instrucional (LDI/SEAD/UFES).
+
+# Licença
+
+Este projeto é distribuído sob a licença MIT.
