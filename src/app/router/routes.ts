@@ -1,4 +1,5 @@
 import type { TFrontmatter } from "../@types";
+import { USlugify } from "@/utils/USlugify";
 
 type SubChapter = {
   id: string;
@@ -30,12 +31,17 @@ const mdxRawContentModules = import.meta.glob<string>(`/src/pages/*.mdx`, {
 
 function extractSubChapters(mdxContent: string): SubChapter[] {
   const subchapters: SubChapter[] = [];
-  const subchaptersRegex = /<h[2-6][^>]*id="([^"]*)"[^>]*>(.*?)<\/h[2-6]>/gs;
-
+  const subchaptersRegex = /<h[2-6][^>]*id="([^"]+)"[^>]*>([\s\S]*?)<\/h[2-6]>/gi;
   let match;
   while ((match = subchaptersRegex.exec(mdxContent)) !== null) {
     const subchapterTitle = match[2].trim();
     const subchapterId = match[1].trim();
+    subchapters.push({ id: subchapterId, title: subchapterTitle });
+  }
+  const SubtitleRegex = /<Subtitle>([\s\S]*?)<\/Subtitle>/gi;
+  while ((match = SubtitleRegex.exec(mdxContent)) !== null) {
+    const subchapterTitle = match[1].trim();
+    const subchapterId = USlugify(subchapterTitle);
     subchapters.push({ id: subchapterId, title: subchapterTitle });
   }
   return subchapters;
