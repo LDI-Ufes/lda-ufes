@@ -1,4 +1,4 @@
-import { Step1, Step2, Step3, Step4 } from "./Steps";
+import { Step1, Step2, Step3, Step4, Step5 } from "./Steps";
 
 export const StepsContent = [
   {
@@ -19,6 +19,6 @@ export const StepsContent = [
   },
   {
     title: "Tudo certo",
-    component: Step4,
+    component: Step5,
   },
 ];

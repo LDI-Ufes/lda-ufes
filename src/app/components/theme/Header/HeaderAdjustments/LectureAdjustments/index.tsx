@@ -43,8 +43,8 @@ const LectureAdjustments = ({
             </span>
           </p>
           <Switch
-            checked={colorsDisabled}
-            onCheckedChange={setColorsDisabled}
+            checked={!colorsDisabled}
+            onCheckedChange={(checked) => setColorsDisabled(!checked)}
           />
         </div>
       </div>

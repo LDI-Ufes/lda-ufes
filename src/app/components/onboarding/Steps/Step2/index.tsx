@@ -22,11 +22,13 @@ export const Step2 = ({
   };
 
   return (
-    <section className="bg-theme-background flex min-h-screen w-full flex-col items-center justify-center gap-14 px-5">
+    <section className="bg-theme-background flex min-h-screen w-full flex-col items-center justify-center gap-14 rounded-3xl px-5 lg:max-h-[700px] lg:min-h-[700px] lg:overflow-hidden">
       <div className="flex flex-1 flex-col justify-center gap-8 pt-14">
         <div className="flex flex-col items-center gap-4">
-          <h1 className="text-primary text-4xl font-bold">Temas de leitura</h1>
-          <p className="text-theme text-center">
+          <h1 className="text-primary text-4xl font-bold lg:text-6xl">
+            Temas de leitura
+          </h1>
+          <p className="text-theme text-center lg:text-xl">
             Altere o contraste entre o texto e a cor de fundo.
           </p>
         </div>

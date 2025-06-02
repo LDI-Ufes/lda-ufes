@@ -1,10 +1,14 @@
 import { Button } from "@/app/components/ui/Button";
-import type { OnboardingStepProps } from "../../types";
-import { MdPlayArrow } from "react-icons/md";
 import { cn } from "@/app/utils/cn";
 import { LogoSVG } from "@/app/icons/Logo";
+import { MdPlayArrow } from "react-icons/md";
 
-export const Step1 = ({ onSkip, onNext, isLastStep }: OnboardingStepProps) => {
+interface OnboardingStepProps {
+  onSkip: () => void;
+  onBack: () => void;
+}
+
+export const Step5 = ({ onBack, onSkip }: OnboardingStepProps) => {
   return (
     <>
       <section className="bg-primary flex min-h-screen w-full flex-col items-center justify-between gap-14 rounded-3xl px-5 lg:max-h-[700px] lg:min-h-[700px] lg:overflow-hidden">
@@ -12,17 +16,18 @@ export const Step1 = ({ onSkip, onNext, isLastStep }: OnboardingStepProps) => {
           <div className="flex flex-col items-center gap-8">
             <LogoSVG className="mx-auto h-24" />
             <h1 className="text-4xl font-bold text-white lg:text-6xl">
-              Boas vindas!
+              Tudo certo!
             </h1>
           </div>
-          <p className="max-w-lg text-center text-white lg:text-xl">
-            Este é um livro digital acessível. <br /> <br /> Ajuste a interface
-            de acordo com suas preferências e aproveite a leitura!
+          <p className="text-center text-white">
+            Sua leitura está prestes a começar, aproveite! <br /> <br /> Você
+            pode alterar suas preferências a qualquer momento através do painel
+            “Ajustes de Leitura”.
           </p>
         </div>
         <div className="flex flex-col items-center gap-6 pb-14">
-          <Button variant={"secondary"} onClick={onNext}>
-            {!isLastStep ? "Iniciar" : "Próximo"}
+          <Button variant={"secondary"} onClick={onSkip}>
+            Iniciar leitura
             <MdPlayArrow className="size-6" />
           </Button>
 
@@ -32,23 +37,21 @@ export const Step1 = ({ onSkip, onNext, isLastStep }: OnboardingStepProps) => {
                 <div
                   className={cn(
                     "size-2.5 rounded-full bg-white/50",
-                    step === 1 && "bg-secondary size-4",
+                    step === 5 && "bg-secondary size-4",
                   )}
                 />
               </Button>
             ))}
           </div>
 
-          {!isLastStep && (
-            <Button
-              variant={"link"}
-              onClick={onSkip}
-              textStyle={"default"}
-              className="font-medium text-white"
-            >
-              Pular para o conteúdo
-            </Button>
-          )}
+          <Button
+            variant={"link"}
+            onClick={onBack}
+            textStyle={"default"}
+            className="font-medium text-white"
+          >
+            Voltar para o tutorial
+          </Button>
         </div>
       </section>
     </>

@@ -47,7 +47,7 @@ export function Onboarding() {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="p-0 lg:max-w-5xl">
+      <DialogContent className="border-none p-0 lg:max-w-5xl">
         <CurrentStepComponent
           onSkip={handleSkip}
           onNext={handleNext}

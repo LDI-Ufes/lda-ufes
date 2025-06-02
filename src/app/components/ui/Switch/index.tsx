@@ -10,7 +10,7 @@ const switchVariants = cva(
     variants: {
       variant: {
         default:
-          "data-[state=checked]:bg-primary data-[state=unchecked]:bg-transparent border-secondary",
+          "data-[state=checked]:bg-secondary data-[state=unchecked]:bg-transparent border-secondary",
       },
     },
     defaultVariants: {
