@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MDXWrapper } from "@/app/components/MDX/MDXWrapper";
 import type { TFrontmatter } from "@/app/@types";
-import { ChapterSubtitle, ChapterTitle } from "../../ui";
+import { Subtitle, ChapterTitle } from "../../ui";
 
 interface LazyMDXPageProps {
   pageName: string;
@@ -72,7 +72,7 @@ export const MDXContent: React.FC<LazyMDXPageProps> = ({ pageName }) => {
         <ChapterTitle>{mdxModule.frontmatter.title}</ChapterTitle>
       ) : null}
       {mdxModule.frontmatter.subtitle ? (
-        <ChapterSubtitle>{mdxModule.frontmatter.subtitle}</ChapterSubtitle>
+        <Subtitle>{mdxModule.frontmatter.subtitle}</Subtitle>
       ) : null}
       <MDXContent />
     </MDXWrapper>

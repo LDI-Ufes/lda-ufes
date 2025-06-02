@@ -11,8 +11,10 @@ import {
   Link,
   Note,
   ChapterTitle,
-  ChapterSubtitle,
+  Subtitle,
   References,
+  Table,
+  Box,
 } from "@/app/components/ui";
 
 export function MDXProvider({ children }: { children: React.ReactNode }) {
@@ -25,7 +27,7 @@ export function MDXProvider({ children }: { children: React.ReactNode }) {
     ),
     h2: (props) => (
       <h2
-        className="text-primary my-3 text-xl font-semibold md:my-3.5 md:text-2xl lg:mt-10 lg:mb-6 lg:text-3xl"
+        className="text-primary my-3 text-lg font-semibold md:my-3.5 md:text-xl lg:mt-8 lg:mb-6 lg:text-2xl"
         {...props}
       />
     ),
@@ -93,7 +95,7 @@ export function MDXProvider({ children }: { children: React.ReactNode }) {
     Link: (props) => <Link {...props} />,
     Note: (props) => <Note {...props} />,
     ChapterTitle: (props) => <ChapterTitle {...props} />,
-    ChapterSubtitle: (props) => <ChapterSubtitle {...props} />,
+    Subtitle: (props) => <Subtitle {...props} />,
     Figure: (props) => <Figure {...props} />,
     EquationBox: (props) => <EquationBox {...props} />,
     Equation: (props) => <Equation {...props} />,
@@ -101,6 +103,8 @@ export function MDXProvider({ children }: { children: React.ReactNode }) {
     Strong: (props) => <Strong {...props} />,
     NoBreak: (props) => <NoBreak {...props} />,
     References: (props) => <References {...props} />,
+    Box: (props) => <Box {...props} />,
+    Table: (props) => <Table {...props} />,
   });
 
   return (
