@@ -23,25 +23,6 @@ const Summary = ({ className, hasSearch = true }: SummaryProps) => {
   const location = useLocation();
   const currentPathname = location.pathname;
 
-  const getSortedPagination = () => {
-    const activePageIndex = Pagination.findIndex((page) =>
-      currentPathname.includes(page.page),
-    );
-
-    if (activePageIndex === -1) {
-      return Pagination;
-    }
-
-    const activePage = Pagination[activePageIndex];
-    const otherPages = Pagination.filter(
-      (_, index) => index !== activePageIndex,
-    );
-
-    return [activePage, ...otherPages];
-  };
-
-  const sortedPagination = getSortedPagination();
-
   return (
     <aside
       className={cn(
@@ -78,7 +59,7 @@ const Summary = ({ className, hasSearch = true }: SummaryProps) => {
           )}
         </header>
         <div className="flex flex-col">
-          {!isExpanded && window.innerWidth > 1024 ? (
+          {isExpanded === false && window.innerWidth > 1024 ? (
             <div className="flex flex-col">
               {Pagination.map((page) => {
                 const isActualChapter = currentPathname.includes(page.page);
@@ -87,7 +68,7 @@ const Summary = ({ className, hasSearch = true }: SummaryProps) => {
                   return (
                     <>
                       <div
-                        key={page.title}
+                        key={`${page.title}- Ativo`}
                         className="bg-primary w-full rounded-lg px-3 py-2 text-white lg:px-5 lg:py-3"
                       >
                         <span className="text-base font-bold text-white lg:text-lg">
@@ -101,7 +82,7 @@ const Summary = ({ className, hasSearch = true }: SummaryProps) => {
             </div>
           ) : (
             <>
-              {sortedPagination.map((page) => {
+              {Pagination.map((page) => {
                 const isActualChapter = currentPathname.includes(page.page);
 
                 const chapterNumber =
@@ -109,29 +90,22 @@ const Summary = ({ className, hasSearch = true }: SummaryProps) => {
                     page,
                   ) + 1;
 
-                if (isActualChapter) {
-                  return (
-                    <div
-                      key={page.title}
-                      className="bg-primary mb-3 rounded-lg px-3 py-2 text-white lg:px-5 lg:py-3"
-                    >
-                      <span className="text-base font-bold text-white lg:text-lg">
-                        {page.title}
-                      </span>
-                    </div>
-                  );
-                }
-
                 return (
                   <div
                     key={page.title}
                     className="flex flex-col border-b-2 border-slate-300 pt-2 pb-3 last:border-b-0 lg:pt-3 lg:pb-5"
                   >
-                    <div className="flex cursor-pointer gap-3">
-                      {page.template === "chapter" && (
-                        <span className="text-primary text-2xl lg:text-3xl">
+                    <div className="flex cursor-pointer items-center gap-3">
+                      {page.template === "chapter" && isActualChapter ? (
+                        <span className="bg-primary flex h-10 w-10 items-center justify-center rounded-md text-xl text-white lg:text-2xl">
                           {chapterNumber.toString().padStart(2, "0")}
                         </span>
+                      ) : (
+                        page.template === "chapter" && (
+                          <span className="text-primary flex h-10 w-10 items-center justify-center text-xl lg:text-2xl">
+                            {chapterNumber.toString().padStart(2, "0")}
+                          </span>
+                        )
                       )}
                       <Link
                         to={`/${page.page}`}
@@ -142,12 +116,12 @@ const Summary = ({ className, hasSearch = true }: SummaryProps) => {
                       </Link>
                     </div>
                     {page.subchapters && page.subchapters.length > 0 && (
-                      <div className="flex flex-col gap-1 pl-8 md:pl-12">
+                      <div className="flex flex-col gap-1 pl-[52px] md:pl-12">
                         {page.subchapters.map((subchapter) => (
                           <Link
-                            key={subchapter.id}
+                            key={`${subchapter.id}-${subchapter.title}`}
                             to={`/${page.page}#${subchapter.id}`}
-                            className="text-theme py-1 hover:underline"
+                            className="text-theme hover:text-secondary py-1 hover:font-bold hover:underline"
                           >
                             {subchapter.title}
                           </Link>
