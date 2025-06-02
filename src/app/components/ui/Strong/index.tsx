@@ -5,7 +5,7 @@ interface StrongProps {
 }
 
 const Strong = ({ children }: StrongProps) => {
-  return <span className="bold">{children}</span>;
+  return <span className="text-primary font-bold">{children}</span>;
 };
 
 export { Strong };
