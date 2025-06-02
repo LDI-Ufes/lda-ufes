@@ -23,7 +23,7 @@ export const HomeBanner = ({
     <section className="relative lg:min-h-[80dvh]">
       {cover ? (
         <img
-          src={cover.startsWith("/") ? cover : `/${cover}`}
+          src={cover.startsWith("/") ? `./${cover.substring(1)}` : `./${cover}`}
           alt="Banner"
           className="top-0 left-0 z-0 h-32 w-full object-cover sm:h-48 md:h-60 lg:absolute lg:h-full"
         />
