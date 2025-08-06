@@ -124,4 +124,18 @@ Este projeto é uma nova versão de um produto concebido e desenvolvido original
 
 # Licença
 
-Este projeto é distribuído sob a licença MIT.
+Este projeto é distribuído sob a licença GNU General Public License v3 (GPL v3).
+
+**Informações de Copyright:**
+- Copyright (c) 2025 Universidade Federal do Espírito Santo
+- Desenvolvido pelo Laboratório de Design Instrucional (LDI/SEAD/UFES)
+- Financiado pela Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES)
+
+**Características da Licença GPL v3:**
+- ✅ **Software Livre**: Garante que o software permaneça livre para todos os usuários
+- ✅ **Código Aberto**: Exige que o código fonte seja disponibilizado
+- ✅ **Distribuição Gratuita**: Atende aos requisitos de financiamento público da CAPES
+- ✅ **Copyleft**: Versões modificadas devem ser distribuídas sob a mesma licença
+- ✅ **Proteção de Patentes**: Inclui proteções contra patentes de software
+
+Para mais detalhes sobre a licença, consulte o arquivo [LICENSE.md](LICENSE.md).
